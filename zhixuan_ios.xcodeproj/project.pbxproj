@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3612EC5319F7976000B4A20C /* ProvinceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612EC5219F7976000B4A20C /* ProvinceController.swift */; };
+		3612EC5519F7B87200B4A20C /* CityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612EC5419F7B87200B4A20C /* CityController.swift */; };
 		3628916719EE4AF900A8B1EE /* DepartmentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628915C19EE4AF900A8B1EE /* DepartmentDetailController.swift */; };
 		3628916819EE4AF900A8B1EE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628915D19EE4AF900A8B1EE /* FirstViewController.swift */; };
 		3628916919EE4AF900A8B1EE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628915E19EE4AF900A8B1EE /* SecondViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3612EC5219F7976000B4A20C /* ProvinceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceController.swift; sourceTree = "<group>"; };
+		3612EC5419F7B87200B4A20C /* CityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityController.swift; sourceTree = "<group>"; };
 		3628915C19EE4AF900A8B1EE /* DepartmentDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDetailController.swift; sourceTree = "<group>"; };
 		3628915D19EE4AF900A8B1EE /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3628915E19EE4AF900A8B1EE /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				3628915C19EE4AF900A8B1EE /* DepartmentDetailController.swift */,
+				3612EC5219F7976000B4A20C /* ProvinceController.swift */,
+				3612EC5419F7B87200B4A20C /* CityController.swift */,
 				3628915D19EE4AF900A8B1EE /* FirstViewController.swift */,
 				3628915E19EE4AF900A8B1EE /* SecondViewController.swift */,
 				3628915F19EE4AF900A8B1EE /* ThirdViewController.swift */,
@@ -329,11 +335,13 @@
 				3628916F19EE4AF900A8B1EE /* utils.swift in Sources */,
 				3628916D19EE4AF900A8B1EE /* HttpRequest.swift in Sources */,
 				3628916E19EE4AF900A8B1EE /* todo.swift in Sources */,
+				3612EC5519F7B87200B4A20C /* CityController.swift in Sources */,
 				3628916C19EE4AF900A8B1EE /* consts.swift in Sources */,
 				3665D2E519F4F9B300A55EFC /* RefreshBaseView.swift in Sources */,
 				3665D2E919F4F9B300A55EFC /* UIScrollView+Refresh.swift in Sources */,
 				3665D2E719F4F9B300A55EFC /* RefreshFooterView.swift in Sources */,
 				36CE257019D2DEE700E467E4 /* AppDelegate.swift in Sources */,
+				3612EC5319F7976000B4A20C /* ProvinceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

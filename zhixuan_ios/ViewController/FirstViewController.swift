@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol {
     
     @IBOutlet weak var cmTableView: UITableView!
+    @IBOutlet weak var cmNav: UINavigationItem!
     
     var httpRequest = HttpRequest()
     var cmObjs = NSMutableArray()
@@ -19,19 +20,29 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
+    var cityId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         println("start1")
         self.cmTableView.tableFooterView = UIView(frame: CGRectZero)
-//            [[[UIView alloc] initWithFrame:CGRectZero] autorelease]
         
         self.httpRequest.delegate = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)")
         
         //注册动画
         setupRefresh()
+        setNav()
+    }
+    
+    func setNav(){
+        let rightBarButtonItem = UIBarButtonItem(title: "选择城市", style: UIBarButtonItemStyle.Plain, target: self, action: NSSelectorFromString("goToSelectProvince:"))
+        self.cmNav.setRightBarButtonItem(rightBarButtonItem, animated: true)
+    }
+    
+    func goToSelectProvince(sender: UIBarButtonItem){
+        self.navigationController?.pushViewController(ProvinceController(), animated: false)
     }
     
     func setupRefresh(){

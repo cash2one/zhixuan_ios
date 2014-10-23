@@ -154,6 +154,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="客户经理" id="NYM-xO-0IW"/>
                     <connections>
+                        <outlet property="cmNav" destination="NYM-xO-0IW" id="N88-y2-jjc"/>
                         <outlet property="cmTableView" destination="oSW-wF-wYe" id="O2p-Ce-PTj"/>
                     </connections>
                 </viewController>
@@ -276,15 +277,6 @@
                                     <rect key="frame" x="86" y="247" width="267" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpD-oL-PYR">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="281" width="68" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTB-B6-8bx">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -309,7 +301,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="86" y="310" width="281" height="34"/>
+                                    <rect key="frame" x="86" y="315" width="281" height="21"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="描述" translatesAutoresizingMaskIntoConstraints="NO" id="6f9-Tj-IlI">
@@ -352,6 +344,15 @@
                                     <rect key="frame" x="8" y="203" width="360" height="36"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpD-oL-PYR">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="10" y="281" width="68" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -359,7 +360,6 @@
                                 <exclude reference="waw-1U-6Xi"/>
                                 <exclude reference="VbG-6W-blU"/>
                                 <exclude reference="g0U-BV-THS"/>
-                                <exclude reference="GpD-oL-PYR"/>
                                 <exclude reference="fTB-B6-8bx"/>
                                 <exclude reference="nmg-2U-CyJ"/>
                                 <exclude reference="B71-OM-vgG"/>
@@ -367,6 +367,7 @@
                                 <exclude reference="BCo-OK-Xcy"/>
                                 <exclude reference="P28-lc-PaL"/>
                                 <exclude reference="Dz9-qb-dOb"/>
+                                <exclude reference="GpD-oL-PYR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -374,7 +375,6 @@
                                 <include reference="waw-1U-6Xi"/>
                                 <include reference="VbG-6W-blU"/>
                                 <include reference="g0U-BV-THS"/>
-                                <include reference="GpD-oL-PYR"/>
                                 <include reference="fTB-B6-8bx"/>
                                 <include reference="nmg-2U-CyJ"/>
                                 <include reference="B71-OM-vgG"/>
@@ -382,6 +382,7 @@
                                 <include reference="BCo-OK-Xcy"/>
                                 <include reference="P28-lc-PaL"/>
                                 <include reference="Dz9-qb-dOb"/>
+                                <include reference="GpD-oL-PYR"/>
                             </mask>
                         </variation>
                     </view>

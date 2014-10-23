@@ -88,3 +88,23 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
 
+class TestViewController1: UIViewController {
+    var departmentObjs = []
+    @IBOutlet weak var testTable: UITableView!
+    
+    override func viewDidLoad() {
+        println("start5")
+        super.viewDidLoad()
+    }
+
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+}
+
+
+

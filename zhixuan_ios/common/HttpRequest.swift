@@ -25,11 +25,16 @@ class HttpRequest:NSObject{
             completionHandler: {
                 (response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
                 self.debug.printWithDate("get http response ok")
+                if(response == nil){
+                    let alert = UIAlertView(title: "请检查网络", message: nil, delegate: nil, cancelButtonTitle: "确定")
+                    alert.show()
+                    return
+                }
                 
                 let httpResponse = response as NSHTTPURLResponse
                 if(httpResponse.statusCode != 200){
-                    println("http request status is \(httpResponse.statusCode)")
-                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+//                    println("http request status is \(httpResponse.statusCode)")
+//                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
                     let alert = UIAlertView(title: "http请求错误：\(httpResponse.statusCode)", message: nil, delegate: nil, cancelButtonTitle: "确定")
                     alert.show()
                 }
