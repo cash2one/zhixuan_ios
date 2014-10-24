@@ -8,18 +8,16 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class AboutUsViewController: UIViewController {
     
     override func viewDidLoad() {
+        println("test")
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        println("start3")
+    
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -47,14 +45,14 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.testTable.reloadData()
             
         })
-    
+        
         
     }
     
     
     func setupRefresh(){
         self.testTable.addFooterWithCallback({
-//            self.departmentObjs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            //            self.departmentObjs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
             self.testTable.footerEndRefreshing()
         })
     }
@@ -77,34 +75,17 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-//    func tableView(tableView: UITableView!, willDisplayCell cell: UITableViewCell!, forRowAtIndexPath indexPath: NSIndexPath!){
-//        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
-//        UIView.animateWithDuration(0.25, animations: {
-//            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
-//        })
-//    }
-
-}
-
-
-
-class TestViewController1: UIViewController {
-    var departmentObjs = []
-    @IBOutlet weak var testTable: UITableView!
-    
-    override func viewDidLoad() {
-        println("start5")
-        super.viewDidLoad()
-    }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    //    func tableView(tableView: UITableView!, willDisplayCell cell: UITableViewCell!, forRowAtIndexPath indexPath: NSIndexPath!){
+    //        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+    //        UIView.animateWithDuration(0.25, animations: {
+    //            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+    //        })
+    //    }
     
 }
+
+
+
 
 
 
