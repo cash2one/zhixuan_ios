@@ -18,7 +18,7 @@ class HttpRequest:NSObject{
     var debug = DebugUtils()
     
     func getResultsWithJson(url:String){
-        var nsUrl:NSURL = NSURL(string:url)
+        var nsUrl:NSURL = NSURL(string:url)!
         var request:NSURLRequest = NSURLRequest(URL: nsUrl)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(),
@@ -42,10 +42,13 @@ class HttpRequest:NSObject{
                     var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers,
                         error: nil) as NSDictionary
                     
-                    var errorCode = jsonResult["errcode"] as Int
-                    if (errorCode != 0){
-                        let alert = UIAlertView(title: jsonResult["errmsg"] as? String, message: nil, delegate: nil, cancelButtonTitle: "确定")
-                        alert.show()
+                    if(jsonResult["errcode"] != nil)
+                    {
+                        var errorCode = jsonResult["errcode"] as Int
+                        if (errorCode != 0){
+                            let alert = UIAlertView(title: jsonResult["errmsg"] as? String, message: nil, delegate: nil, cancelButtonTitle: "确定")
+                            alert.show()
+                        }
                     }
                     
                     self.delegate?.didRecieveResults(jsonResult)
@@ -55,7 +58,7 @@ class HttpRequest:NSObject{
     }
     
     func getImage(url:String) -> UIImage{
-        let imgURL:NSURL = NSURL(string:url)
+        let imgURL:NSURL = NSURL(string:url)!
         let request:NSURLRequest = NSURLRequest(URL:imgURL)
         var img:UIImage!
         

@@ -65,7 +65,7 @@
 		3665D2E019F4F9B300A55EFC /* RefreshFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
 		3665D2E119F4F9B300A55EFC /* RefreshHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderView.swift; sourceTree = "<group>"; };
 		3665D2E219F4F9B300A55EFC /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
-		36CE256A19D2DEE700E467E4 /* 智选debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "智选debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36CE256A19D2DEE700E467E4 /* 股票开户宝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股票开户宝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE256E19D2DEE700E467E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE256F19D2DEE700E467E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36CE257619D2DEE800E467E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		36CE256B19D2DEE700E467E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				36CE256A19D2DEE700E467E4 /* 智选debug.app */,
+				36CE256A19D2DEE700E467E4 /* 股票开户宝.app */,
 				36CE258119D2DEE800E467E4 /* zhixuan_iosTests.xctest */,
 			);
 			name = Products;
@@ -237,7 +237,7 @@
 			);
 			name = zhixuan_ios;
 			productName = zhixuan_ios;
-			productReference = 36CE256A19D2DEE700E467E4 /* 智选debug.app */;
+			productReference = 36CE256A19D2DEE700E467E4 /* 股票开户宝.app */;
 			productType = "com.apple.product-type.application";
 		};
 		36CE258019D2DEE800E467E4 /* zhixuan_iosTests */ = {
@@ -466,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zhixuan_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "智选debug";
+				PRODUCT_NAME = "股票开户宝";
 			};
 			name = Debug;
 		};
@@ -476,7 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zhixuan_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "智选";
+				PRODUCT_NAME = "股票开户宝";
 			};
 			name = Release;
 		};

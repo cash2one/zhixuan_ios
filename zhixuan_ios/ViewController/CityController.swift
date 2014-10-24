@@ -9,13 +9,17 @@
 
 import UIKit
 
+protocol SelectCityProtocol{
+    func selectCity(cityId:Int, cityName:String)
+}
+
 class CityController: UITableViewController {
     
-    var citys = [] as Array
+    var citys = []
     var httpRequest = HttpRequest()
+    var delegate:SelectCityProtocol?
     
     override func viewDidLoad() {
-        println("go to city select")
         super.viewDidLoad()
         
         self.navigationItem.title = "选择城市"
@@ -40,7 +44,7 @@ class CityController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cityCell") as UITableViewCell
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
-        cell?.textLabel?.text = self.citys[indexPath.row]["name"] as? String
+        cell?.textLabel.text = self.citys[indexPath.row]["name"] as? String
         
         return cell!
     }
@@ -53,17 +57,12 @@ class CityController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        var fv = FirstViewController()
-//        fv.cityId = citys[indexPath.row]["id"] as String
-//        self.navigationController?.popToRootViewControllerAnimated(true)
-//        self.navigationController?.popToViewController(ProvinceController(), animated: false)
-        self.navigationController?.popViewControllerAnimated(true)
+        let cityId = citys[indexPath.row]["id"] as Int
+        let cityName = citys[indexPath.row]["name"] as String
+        self.delegate?.selectCity(cityId, cityName: cityName)
+        self.navigationController?.popToRootViewControllerAnimated(false)
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //跳转到选择城市页面
-        println("get this")
-    }
     
 }

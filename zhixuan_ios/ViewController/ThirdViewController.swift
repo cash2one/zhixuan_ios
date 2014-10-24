@@ -24,7 +24,7 @@ class ThirdViewController: UIViewController {
     
     
     @IBAction func goToZhixuan(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://zhixuan.com"))
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://zhixuan.com")!)
     }
 }
 
@@ -73,7 +73,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let cell = tableView.dequeueReusableCellWithIdentifier("test") as UITableViewCell
         
-        cell.textLabel?.text = "11111"
+        cell.textLabel.text = "11111"
         return cell
     }
     

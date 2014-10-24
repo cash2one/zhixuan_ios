@@ -31,7 +31,7 @@ class DepartmentDetailController: UIViewController {
         
         //转换html后再textview中显示
         var desWithoutFormat = departmentObj!["des"] as? String
-        let des = NSAttributedString(data:desWithoutFormat!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true),
+        let des = NSAttributedString(data:desWithoutFormat!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!,
                                      options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding],
                                      documentAttributes: nil, error: nil)
         

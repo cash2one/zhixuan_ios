@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol, SelectCityProtocol, UIAlertViewDelegate {
     
     @IBOutlet weak var cmTableView: UITableView!
     @IBOutlet weak var cmNav: UINavigationItem!
@@ -20,7 +20,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
-    var cityId = ""
+    var cityId:Int?
+    var cityIdReSelect:Int?
+    var rightBarButtonItem = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,24 +33,31 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.httpRequest.delegate = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)")
         
-        //注册动画
-        setupRefresh()
-        setNav()
+        
+        setupRefresh()  //注册动画
+        setNav()    //设置右侧按钮
+        getVersionInfo()
     }
     
     func setNav(){
-        let rightBarButtonItem = UIBarButtonItem(title: "选择城市", style: UIBarButtonItemStyle.Plain, target: self, action: NSSelectorFromString("goToSelectProvince:"))
+        rightBarButtonItem = UIBarButtonItem(title: "选择城市", style: UIBarButtonItemStyle.Plain, target: self, action: NSSelectorFromString("goToSelectProvince:"))
         self.cmNav.setRightBarButtonItem(rightBarButtonItem, animated: true)
     }
     
     func goToSelectProvince(sender: UIBarButtonItem){
-        self.navigationController?.pushViewController(ProvinceController(), animated: false)
+        let pc = ProvinceController()
+        pc.fc = self
+        self.navigationController?.pushViewController(pc, animated: false)
     }
     
     func setupRefresh(){
         self.cmTableView.addFooterWithCallback({
             self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)")
         })
+    }
+    
+    func getVersionInfo(){
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json?v=1")
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +84,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let img = httpRequest.getImage(rowData["img"] as String)
         cell.cmImageView?.image = img
         
-//        cmNavItem.title = "客户经理(共\(self.cmCount)位)"
+//        cmNav.title = "客户经理(共\(self.cmCount)位)"
         return cell
     }
     
@@ -86,9 +95,20 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
     
+    
     func didRecieveResults(results:NSDictionary){
+        if(results["version"] != nil){
+            checkVersion(results, self)
+            return
+        }
         cmAddObjs = results["custom_managers"] as NSArray
         self.cmCount = results["custom_managers_count"] as Int
+        
+        if(self.cityId != self.cityIdReSelect){
+            // 更换了城市重新加载数据
+            self.cmTableView.reloadData()
+            self.cityId = self.cityIdReSelect
+        }
         
         if(self.pageCount == 1)
         {
@@ -102,7 +122,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.cmObjs.insertObject(self.cmAddObjs[i], atIndex: self.cmObjs.count)
             }
             
-            var indexPaths:Array = []
+            var indexPaths = Array([])
             for i in 0...newCount {
                 indexPaths.append(NSIndexPath(forRow: originCount + i, inSection: 0))
             }
@@ -116,6 +136,32 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         self.pageCount += 1
     }
+    
+    func selectCity(cityId: Int, cityName: String) {
+        self.cityIdReSelect = cityId
+        self.rightBarButtonItem.title = cityName
+        self.pageCount = 1
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(cityId)")
+    }
+    
+    
+//    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+//        println(12221)
+//        println(buttonIndex)
+//    }
+//    
+//    
+//    
+//    func checkVersion(results:NSDictionary){
+//        let version = results["version"] as String
+//        let index = results["index"] as Int
+//        let des = results["des"] as String
+//        
+//        let alert = UIAlertView(title: "有新版本啦(\(version))", message: des, delegate: self, cancelButtonTitle: "以后再说", otherButtonTitles: "欢乐升级")
+//        alert.show()
+//    }
+    
+
 
 }
 

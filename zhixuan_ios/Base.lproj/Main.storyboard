@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--客户经理-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="智选" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customManager" rowHeight="100" id="IC9-aX-dZv" customClass="CustomManagerCell" customModule="智选" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customManager" rowHeight="100" id="IC9-aX-dZv" customClass="CustomManagerCell" customModule="股票开户宝" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IC9-aX-dZv" id="rXU-Ts-qAI">
@@ -132,7 +132,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="595"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="ejY-Tw-bCC"/>
@@ -165,7 +165,7 @@
         <!--营业部列表-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="智选" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -178,7 +178,7 @@
                                 <rect key="frame" x="16" y="10" width="568" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="department" rowHeight="70" id="PHc-Qf-7qJ" customClass="DepartmentCell" customModule="智选" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="department" rowHeight="70" id="PHc-Qf-7qJ" customClass="DepartmentCell" customModule="股票开户宝" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="571" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PHc-Qf-7qJ" id="h8l-Wh-zdf">
@@ -186,12 +186,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-96-1yf">
                                                     <rect key="frame" x="0.0" y="15" width="75" height="45"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="15" width="75" height="45"/>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpm-c7-AZi">
                                                     <rect key="frame" x="83" y="21" width="240" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="83" y="22" width="265" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bt-bO-y79">
                                                     <rect key="frame" x="83" y="43" width="288" height="21"/>
@@ -204,6 +210,9 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="351" y="21" width="33" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -217,7 +226,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="64" width="382" height="487"/>
+                                    <rect key="frame" x="8" y="0.0" width="384" height="595"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="p8n-3d-AW1"/>
@@ -235,12 +244,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579.5" y="343"/>
+            <point key="canvasLocation" x="1579.5" y="342"/>
         </scene>
         <!--营业部详情-->
         <scene sceneID="aqA-D3-6JW">
             <objects>
-                <viewController id="n7j-7O-knq" customClass="DepartmentDetailController" customModule="智选" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n7j-7O-knq" customClass="DepartmentDetailController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ogo-6R-9Vh"/>
                         <viewControllerLayoutGuide type="bottom" id="Z6j-OJ-VZH"/>
@@ -301,7 +310,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="86" y="315" width="281" height="21"/>
+                                    <rect key="frame" x="86" y="307" width="281" height="38"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="描述" translatesAutoresizingMaskIntoConstraints="NO" id="6f9-Tj-IlI">
@@ -311,7 +320,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                    <rect key="frame" x="10" y="399" width="370" height="259"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     营业部简介" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-OK-Xcy">
@@ -326,12 +335,6 @@
                                     <rect key="frame" x="7" y="355" width="360" height="36"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P28-lc-PaL">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="125" y="72" width="150" height="90"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     基本信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz9-qb-dOb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.91962466030000001" green="0.91962466030000001" blue="0.91962466030000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -353,6 +356,12 @@
                                     <rect key="frame" x="10" y="281" width="68" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P28-lc-PaL">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="113" y="72" width="150" height="90"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -365,9 +374,9 @@
                                 <exclude reference="B71-OM-vgG"/>
                                 <exclude reference="6f9-Tj-IlI"/>
                                 <exclude reference="BCo-OK-Xcy"/>
-                                <exclude reference="P28-lc-PaL"/>
                                 <exclude reference="Dz9-qb-dOb"/>
                                 <exclude reference="GpD-oL-PYR"/>
+                                <exclude reference="P28-lc-PaL"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -380,9 +389,9 @@
                                 <include reference="B71-OM-vgG"/>
                                 <include reference="6f9-Tj-IlI"/>
                                 <include reference="BCo-OK-Xcy"/>
-                                <include reference="P28-lc-PaL"/>
                                 <include reference="Dz9-qb-dOb"/>
                                 <include reference="GpD-oL-PYR"/>
+                                <include reference="P28-lc-PaL"/>
                             </mask>
                         </variation>
                     </view>
@@ -412,7 +421,7 @@
                     <connections>
                         <segue destination="6aC-mb-TSF" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="ii3-cF-JsJ" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="4wn-Kk-aWR" kind="relationship" relationship="viewControllers" id="khf-hh-B3i"/>
+                        <segue destination="4nP-m2-lyD" kind="relationship" relationship="viewControllers" id="NYQ-YZ-Jt6"/>
                         <segue destination="cZJ-fs-Tbx" kind="relationship" relationship="viewControllers" id="nGI-UI-Y8Q"/>
                     </connections>
                 </tabBarController>
@@ -423,7 +432,7 @@
         <!--test-->
         <scene sceneID="Vcg-MB-Kvj">
             <objects>
-                <viewController id="idt-e6-neM" customClass="TestViewController" customModule="智选" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="idt-e6-neM" customClass="TestViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UfL-OH-10E"/>
                         <viewControllerLayoutGuide type="bottom" id="yTT-ye-bXu"/>
@@ -445,7 +454,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="72" width="382" height="528"/>
+                                    <rect key="frame" x="0.0" y="5" width="400" height="595"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="idt-e6-neM" id="aRL-6a-lBy"/>
@@ -472,12 +481,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHm-sN-dqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579.5" y="1017"/>
+            <point key="canvasLocation" x="-195" y="1703"/>
+        </scene>
+        <!--关于-->
+        <scene sceneID="Ykl-Zr-9LG">
+            <objects>
+                <viewController id="Xqp-f7-wk7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4OQ-lU-ZKS"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Hf-1v-VcV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Se7-mY-AK2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于" id="xhj-UI-J13"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eId-6a-EZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1055"/>
         </scene>
         <!--关于-->
         <scene sceneID="2Hx-kF-2Fc">
             <objects>
-                <viewController id="4wn-Kk-aWR" customClass="ThirdViewController" customModule="智选" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4wn-Kk-aWR" customClass="ThirdViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iqn-Og-0Io"/>
                         <viewControllerLayoutGuide type="bottom" id="qTJ-tN-Kkb"/>
@@ -486,12 +513,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第三个视图" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-US-vcV">
-                                <rect key="frame" x="258" y="289" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQS-ge-COe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="智选出品">
+                                    <color key="titleColor" red="0.73811141304347827" green="0.73811141304347827" blue="0.73811141304347827" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="178" y="497" width="44" height="26"/>
+                                </variation>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PR-ts-XLa">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -501,17 +533,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="48" y="90" width="304" height="150"/>
+                                    <rect key="frame" x="50" y="115" width="300" height="300"/>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQS-ge-COe">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="智选出品">
-                                    <color key="titleColor" red="0.73811141304347827" green="0.73811141304347827" blue="0.73811141304347827" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -520,9 +544,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="H6V-US-vcV"/>
-                                <exclude reference="3PR-ts-XLa"/>
                                 <exclude reference="AQS-ge-COe"/>
+                                <exclude reference="3PR-ts-XLa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="I5K-FP-RHM"/>
@@ -531,8 +554,8 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="3PR-ts-XLa"/>
                                 <include reference="AQS-ge-COe"/>
+                                <include reference="3PR-ts-XLa"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="I5K-FP-RHM"/>
@@ -546,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E75-uy-KPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1759"/>
+            <point key="canvasLocation" x="2335.5" y="1055"/>
         </scene>
         <!--营业部-->
         <scene sceneID="KAx-DR-Tae">
@@ -588,7 +611,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpx-wr-YSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1017"/>
+            <point key="canvasLocation" x="-195" y="994"/>
         </scene>
         <!--客户经理-->
         <scene sceneID="WeM-85-tRt">
@@ -610,6 +633,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idN-uQ-S7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--关于-->
+        <scene sceneID="KUp-y3-eSQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4nP-m2-lyD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="关于" id="aTm-Q3-09B">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZDA-7C-aAA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xqp-f7-wk7" kind="relationship" relationship="rootViewController" id="NJw-vX-v7h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRL-Vj-uYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1055"/>
         </scene>
     </scenes>
     <resources>

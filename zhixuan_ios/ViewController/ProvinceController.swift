@@ -11,9 +11,10 @@ import UIKit
 
 class ProvinceController: UITableViewController, HttpRequestProtocol {
     
-    var provinces = [] as Array
+    var provinces = Array([])
     var httpRequest = HttpRequest()
     var provinceDatas:NSArray!
+    var fc:FirstViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class ProvinceController: UITableViewController, HttpRequestProtocol {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "provinceCell") as UITableViewCell
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
-        cell?.textLabel?.text = self.provinces[indexPath.row] as? String
+        cell?.textLabel.text = self.provinces[indexPath.row] as? String
 
         return cell!
     }
@@ -58,8 +59,9 @@ class ProvinceController: UITableViewController, HttpRequestProtocol {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let cc = CityController()
-//        println(provinceDatas)
-        cc.citys = provinceDatas[indexPath.row]["cities"] as Array
+        let cityDict = provinceDatas[indexPath.row] as NSDictionary
+        cc.citys = cityDict["cities"] as NSArray
+        cc.delegate = self.fc
         self.navigationController?.pushViewController(cc, animated: true)
     }
     

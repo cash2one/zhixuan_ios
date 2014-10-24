@@ -70,7 +70,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         cell.departmentImageView?.image = img
         cell.departmentObj = rowData
         
-        departmentNavItem.title = "营业部(共\(self.departmentCount)家)"
         return cell
     }
     
@@ -89,6 +88,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         {
             self.departmentObjs = departmentAddObjs as NSMutableArray
             self.departmentTableView.reloadData()
+            departmentNavItem.title = "营业部(共\(self.departmentCount)家)"
         }
         else if(departmentAddObjs.count > 0) {
             let originCount = departmentObjs.count
@@ -97,7 +97,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                 self.departmentObjs.insertObject(self.departmentAddObjs[i], atIndex: self.departmentObjs.count)
             }
             
-            var indexPaths:Array = []
+            var indexPaths = Array([])
             for i in 0...newCount {
                 indexPaths.append(NSIndexPath(forRow: originCount + i, inSection: 0))
             }
