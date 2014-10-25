@@ -28,6 +28,7 @@
 		3665D2E919F4F9B300A55EFC /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665D2E219F4F9B300A55EFC /* UIScrollView+Refresh.swift */; };
 		36880DA019FA341C0083FB9B /* icon_120m120.png in Resources */ = {isa = PBXBuildFile; fileRef = 36880D9F19FA341C0083FB9B /* icon_120m120.png */; };
 		36880DA219FA37270083FB9B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA119FA37270083FB9B /* AboutUsViewController.swift */; };
+		36880DA619FB78860083FB9B /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA519FB78860083FB9B /* ContactUsViewController.swift */; };
 		36CE257019D2DEE700E467E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE256F19D2DEE700E467E4 /* AppDelegate.swift */; };
 		36CE257719D2DEE800E467E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257519D2DEE800E467E4 /* Main.storyboard */; };
 		36CE257919D2DEE800E467E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257819D2DEE800E467E4 /* Images.xcassets */; };
@@ -67,6 +68,7 @@
 		3665D2E219F4F9B300A55EFC /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		36880D9F19FA341C0083FB9B /* icon_120m120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120m120.png; sourceTree = "<group>"; };
 		36880DA119FA37270083FB9B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		36880DA519FB78860083FB9B /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		36CE256A19D2DEE700E467E4 /* 股票开户宝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股票开户宝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE256E19D2DEE700E467E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE256F19D2DEE700E467E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3628915E19EE4AF900A8B1EE /* SecondViewController.swift */,
 				3628915F19EE4AF900A8B1EE /* AboutViewController.swift */,
 				36880DA119FA37270083FB9B /* AboutUsViewController.swift */,
+				36880DA519FB78860083FB9B /* ContactUsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -269,6 +272,11 @@
 				TargetAttributes = {
 					36CE256919D2DEE700E467E4 = {
 						CreatedOnToolsVersion = 6.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					36CE258019D2DEE800E467E4 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -326,6 +334,7 @@
 				3654B30B19F6333000EA7FDD /* customManagerCell.swift in Sources */,
 				3628916919EE4AF900A8B1EE /* SecondViewController.swift in Sources */,
 				3628916819EE4AF900A8B1EE /* FirstViewController.swift in Sources */,
+				36880DA619FB78860083FB9B /* ContactUsViewController.swift in Sources */,
 				3628916B19EE4AF900A8B1EE /* departmentCustomCell.swift in Sources */,
 				3628916A19EE4AF900A8B1EE /* AboutViewController.swift in Sources */,
 				3665D2E619F4F9B300A55EFC /* RefreshConst.swift in Sources */,

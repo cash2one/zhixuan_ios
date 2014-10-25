@@ -36,7 +36,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         setupRefresh()  //注册动画
         setNav()    //设置右侧按钮
-        getVersionInfo()
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json?v=1")
     }
     
     func setNav(){
@@ -56,9 +56,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
     
-    func getVersionInfo(){
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json?v=1")
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -98,7 +95,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didRecieveResults(results:NSDictionary){
         if(results["version"] != nil){
-            checkVersion(results, self)
+            VersionCheck().checkVersion(results, view: self, mustNotice: false)
             return
         }
         cmAddObjs = results["custom_managers"] as NSArray
@@ -143,24 +140,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.pageCount = 1
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(cityId)")
     }
-    
-    
-//    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-//        println(12221)
-//        println(buttonIndex)
-//    }
-//    
-//    
-//    
-//    func checkVersion(results:NSDictionary){
-//        let version = results["version"] as String
-//        let index = results["index"] as Int
-//        let des = results["des"] as String
-//        
-//        let alert = UIAlertView(title: "有新版本啦(\(version))", message: des, delegate: self, cancelButtonTitle: "以后再说", otherButtonTitles: "欢乐升级")
-//        alert.show()
-//    }
-    
 
 
 }

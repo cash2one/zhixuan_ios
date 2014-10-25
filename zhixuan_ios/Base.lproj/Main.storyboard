@@ -581,7 +581,7 @@
         <!--About Us View Controller-->
         <scene sceneID="MTb-tv-uCr">
             <objects>
-                <viewController id="3Bz-Bn-1VG" customClass="AboutUsViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutUsStoryboardId" id="3Bz-Bn-1VG" customClass="AboutUsViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FBJ-cu-ojj"/>
                         <viewControllerLayoutGuide type="bottom" id="X6u-kP-4nA"/>
@@ -592,13 +592,14 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-M8-7Hb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">        股票开户通是一个股票开户平台，这里有全国300多个城市的的数千名认证的客户经理为需要股票开户的朋友提供咨询和指导服务；
-        投资是门学问，要善学善问，股票开户后我们还提供了一个授业解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问理财问答社区「智选」，网址：http://zhixuan.com，后续app也即将推出，敬请期待</string>
+                                <string key="text">股票开户通是一个股票开户平台，这里有全国300多个城市的的数千名认证的客户经理为需要股票开户的朋友提供咨询和指导服务；
+
+投资是门学问，要善学善问，股票开户后我们还提供了一个授业解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问理财问答社区「智选」，网址：http://zhixuan.com，后续app也即将推出，敬请期待</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="50" y="150" width="300" height="300"/>
+                                    <rect key="frame" x="30" y="43" width="340" height="300"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -618,6 +619,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3D-gG-lOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2335.5" y="1055"/>
+        </scene>
+        <!--Contact Us View Controller-->
+        <scene sceneID="Qbc-2X-dtd">
+            <objects>
+                <viewController storyboardIdentifier="contactUsStoryboardId" id="ohF-8Q-VEM" customClass="ContactUsViewController" customModule="股票开户宝" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oei-ox-f8r"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Kw-ft-brR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FMV-4W-tbu">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Fyf-TM-GBJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contactUsCell" textLabel="Ey9-D1-0En" detailTextLabel="Vls-bq-7uu" rowHeight="48" style="IBUITableViewCellStyleValue1" id="Chm-IT-nrK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Chm-IT-nrK" id="k2U-S7-xYS">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ey9-D1-0En">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vls-bq-7uu">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="39" width="380" height="240"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="ohF-8Q-VEM" id="Wel-YB-xcj"/>
+                                    <outlet property="delegate" destination="ohF-8Q-VEM" id="Kwr-aE-7IV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Fyf-TM-GBJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Fyf-TM-GBJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="contactTableView" destination="Fyf-TM-GBJ" id="6ib-cM-SfY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKE-F1-D3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335.5" y="1749"/>
         </scene>
         <!--营业部-->
         <scene sceneID="KAx-DR-Tae">

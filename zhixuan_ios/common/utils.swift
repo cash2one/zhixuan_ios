@@ -19,41 +19,45 @@ class DebugUtils:NSObject {
 }
 
 
-class VersionAlertView: UIViewController, UIAlertViewDelegate{
-    override func viewDidLoad() {
-        println(1111)
-        super.viewDidLoad()
-    }
+class VersionCheck:NSObject {
+    var alert:UIAlertController!
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-        println(12221)
-        println(buttonIndex)
-    }
-}
-
-func checkVersion(versionInfo:NSDictionary, view:UIViewController){
-    let version = versionInfo["version"] as String
-    let index = versionInfo["index"] as Int
-    let des = versionInfo["des"] as String
-    
-    if(index > VERSIONINDEX){
-        var alert = UIAlertController(title: "有新版本啦(\(version))", message: des, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "以后再说", style: UIAlertActionStyle.Cancel, handler:nil))
-        alert.addAction(UIAlertAction(title: "欢乐升级", style: UIAlertActionStyle.Default, handler:goToAppStore))
-        view.presentViewController(alert, animated: true, completion: nil)
+    func checkVersion(versionInfo:NSDictionary, view:UIViewController, mustNotice:Bool){
+        let version = versionInfo["version"] as String
+        let index = versionInfo["index"] as Int
+        let des = versionInfo["des"] as String
         
-        //    let alert = UIAlertView(title: "有新版本啦(\(version))", message: des, delegate: VersionAlertView(), cancelButtonTitle: "以后再说", otherButtonTitles: "欢乐升级")
-        //    alert.show()
+        if(index > VERSIONINDEX){
+            alert = UIAlertController(title: "有新版本啦(\(version))", message: des, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "以后再说", style: UIAlertActionStyle.Cancel, handler:nil))
+            alert.addAction(UIAlertAction(title: "欢乐升级", style: UIAlertActionStyle.Default, handler:okButtonClick))
+            view.presentViewController(alert, animated: true, completion: nil)
+        }
+        else if(mustNotice){
+            alert = UIAlertController(title: "", message: "已经是最新版本:\(VERSION)", preferredStyle: UIAlertControllerStyle.Alert)
+            view.presentViewController(alert, animated: true, completion: nil)
+            
+            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: Selector("performDismiss:"), userInfo: nil, repeats: false)
+        }
     }
     
+    func performDismiss(timer:NSTimer){
+        alert.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func okButtonClick(alertView: UIAlertAction!)
+    {
+        goToAppStore()
+    }
 }
 
-
-func goToAppStore(alertView: UIAlertAction!)
-{
+func goToAppStore(){
 //    UIApplication.sharedApplication().openURL(NSURL(string: "http://www.baidu.com")!)
     UIApplication.sharedApplication().openURL(NSURL(string: "itms://itunes.apple.com/de/app/x-gift/id839686104?mt=8&uo=4")!)
 }
+
+
+
 
 
 

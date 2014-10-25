@@ -11,9 +11,9 @@ import UIKit
 class AboutUsViewController: UIViewController {
     
     override func viewDidLoad() {
-        println("test")
+//        self.view.backgroundColor = UIColor.whiteColor()
         super.viewDidLoad()
-    
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,6 +25,8 @@ class AboutUsViewController: UIViewController {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://zhixuan.com")!)
     }
 }
+
+
 
 
 class TestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
