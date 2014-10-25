@@ -13,6 +13,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var departmentTableView: UITableView!
     @IBOutlet weak var departmentNavItem: UINavigationItem!
     
+    let defaults = NSUserDefaults()
     var httpRequest = HttpRequest()
     var departmentObjs = NSMutableArray()
     var departmentAddObjs = NSArray()
@@ -20,13 +21,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
+    var cityId:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         println("start2")
+        cityId = self.defaults.stringForKey("cityId")?.toInt()
         self.httpRequest.delegate = self
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)")
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
         //注册动画
         setupRefresh()
@@ -35,7 +38,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func setupRefresh(){
         self.departmentTableView.addFooterWithCallback({
-            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)")
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         })
     }
 
@@ -54,9 +57,12 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCellWithIdentifier("department") as DepartmentCell
         
-        cell.nameLabel?.text = rowData["short_name"] as? String
+        cell.nameLabel.text = rowData["short_name"] as? String
         let tel = rowData["tel"] as String
-        cell.telLabel?.text = "电话: \(tel)"
+        cell.telLabel.text = "电话: \(tel)"
+        let addr = rowData["addr"] as String
+        cell.addrLabel.text = "地址: \(addr)"
+        
         let cmCount = String(rowData["cm_count"] as Int)
         if(cmCount == "0"){
             cell.cmCountLabel.hidden = true

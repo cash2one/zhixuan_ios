@@ -13,6 +13,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var cmTableView: UITableView!
     @IBOutlet weak var cmNav: UINavigationItem!
     
+    let defaults = NSUserDefaults()
     var httpRequest = HttpRequest()
     var cmObjs = NSMutableArray()
     var cmAddObjs = NSArray()
@@ -20,8 +21,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
-    var cityId:Int?
+    var cityId:Int!
     var cityIdReSelect:Int?
+    var cityName = "选择城市"
     var rightBarButtonItem = UIBarButtonItem()
 
     override func viewDidLoad() {
@@ -30,8 +32,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         println("start1")
         self.cmTableView.tableFooterView = UIView(frame: CGRectZero)
         
+        // 给城市id和name赋值
+        cityId = self.defaults.stringForKey("cityId")?.toInt()
+        cityName = self.defaults.stringForKey("cityName")!
+        
         self.httpRequest.delegate = self
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)")
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
         
         setupRefresh()  //注册动画
@@ -40,7 +46,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func setNav(){
-        rightBarButtonItem = UIBarButtonItem(title: "选择城市", style: UIBarButtonItemStyle.Plain, target: self, action: NSSelectorFromString("goToSelectProvince:"))
+        rightBarButtonItem = UIBarButtonItem(title: cityName, style: UIBarButtonItemStyle.Plain, target: self, action: NSSelectorFromString("goToSelectProvince:"))
         self.cmNav.setRightBarButtonItem(rightBarButtonItem, animated: true)
     }
     
@@ -52,7 +58,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func setupRefresh(){
         self.cmTableView.addFooterWithCallback({
-            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)")
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         })
     }
     
@@ -135,10 +141,17 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func selectCity(cityId: Int, cityName: String) {
+        //数据持久化
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(cityId, forKey: "cityId")
+        ud.setObject(cityName, forKey: "cityName")
+        self.cityId = cityId
+        self.cityName = cityName
+        
         self.cityIdReSelect = cityId
         self.rightBarButtonItem.title = cityName
         self.pageCount = 1
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(cityId)")
+        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
     }
 
 
