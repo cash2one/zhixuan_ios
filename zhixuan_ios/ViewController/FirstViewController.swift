@@ -25,6 +25,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var cityIdReSelect:Int?
     var cityName = "选择城市"
     var rightBarButtonItem = UIBarButtonItem()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +37,14 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         cityId = self.defaults.stringForKey("cityId")?.toInt()
         cityName = self.defaults.stringForKey("cityName")!
         
+        
         self.httpRequest.delegate = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
-        
         setupRefresh()  //注册动画
         setNav()    //设置右侧按钮
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json?v=1")
+        checkVersion()  //版本检测
+        
     }
     
     func setNav(){
@@ -54,6 +56,15 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let pc = ProvinceController()
         pc.fc = self
         self.navigationController?.pushViewController(pc, animated: false)
+    }
+    
+    func checkVersion(){
+        let lastCheckVersionDate = self.defaults.stringForKey("lastCheckVersionDate")
+        let currentDate = DateUtil().changeCurrentDateAsString("yyyy-MM-dd")
+        //版本一天检测一次
+        if(lastCheckVersionDate < currentDate){
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json")
+        }
     }
     
     func setupRefresh(){
@@ -101,6 +112,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didRecieveResults(results:NSDictionary){
         if(results["version"] != nil){
+            let lastCheckVersionDate = DateUtil().changeCurrentDateAsString("yyyy-MM-dd")
+            self.defaults.setValue(lastCheckVersionDate, forKey: "lastCheckVersionDate")    //设置时间戳，每天检测一次升级
+            self.defaults.synchronize()
+            
             VersionCheck().checkVersion(results, view: self, mustNotice: false)
             return
         }
@@ -142,9 +157,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func selectCity(cityId: Int, cityName: String) {
         //数据持久化
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.setObject(cityId, forKey: "cityId")
-        ud.setObject(cityName, forKey: "cityName")
+        self.defaults.setValue(cityId, forKey: "cityId")
+        self.defaults.setValue(cityName, forKey: "cityName")
+        self.defaults.synchronize()
+        
         self.cityId = cityId
         self.cityName = cityName
         

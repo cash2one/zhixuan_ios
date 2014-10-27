@@ -217,7 +217,7 @@
                                                         <rect key="frame" x="351" y="8" width="33" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMR-tR-2D2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMR-tR-2D2">
                                                     <rect key="frame" x="83" y="43" width="288" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,7 +249,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="0.0" width="384" height="595"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="595"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="p8n-3d-AW1"/>
@@ -477,7 +477,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="5" width="400" height="595"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="595"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="idt-e6-neM" id="aRL-6a-lBy"/>
@@ -515,6 +515,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Hf-1v-VcV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Se7-mY-AK2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon_120m120.png" translatesAutoresizingMaskIntoConstraints="NO" id="jE0-LV-Y11">
@@ -536,7 +537,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-2" y="274" width="380" height="240"/>
+                                    <rect key="frame" x="0.0" y="274" width="380" height="240"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Xqp-f7-wk7" id="qhu-S7-ovu"/>
@@ -610,6 +611,7 @@
                         <viewControllerLayoutGuide type="bottom" id="X6u-kP-4nA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dWc-CZ-s6Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-M8-7Hb">
@@ -652,6 +654,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Kw-ft-brR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FMV-4W-tbu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Fyf-TM-GBJ">
@@ -687,7 +690,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="39" width="380" height="240"/>
+                                    <rect key="frame" x="0.0" y="40" width="380" height="240"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="ohF-8Q-VEM" id="Wel-YB-xcj"/>

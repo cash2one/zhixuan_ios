@@ -18,6 +18,41 @@ class DebugUtils:NSObject {
     }
 }
 
+class DateUtil:NSObject {
+    func changeCurrentDateAsString(format:String?)->NSString{
+        //获取当前日期字符串
+        
+        return changeDateAsString(NSDate(), format: format)
+    }
+    
+    func changeDateAsString(date:NSDate, format:String?)->NSString{
+        //获取日期字符串
+        
+        let timeFormatter = NSDateFormatter()
+        var dateFormat = format
+        
+        if(format == "" || format == nil){
+            dateFormat = "yyyy-MM-dd HH:mm:ss"
+        }
+        timeFormatter.dateFormat = dateFormat
+        
+        return timeFormatter.stringFromDate(NSDate())
+    }
+    
+    func getDateFromString(dateString:String, format:String?)->NSDate{
+        //将字符串转换为日期格式
+        
+        let mydateFormatter = NSDateFormatter()
+        var dateFormat = format
+        if(format == "" || format == nil){
+            dateFormat = "yyyy-MM-dd HH:mm:ss"
+        }
+        mydateFormatter.dateFormat = dateFormat
+        let date = mydateFormatter.dateFromString(dateString)
+        return date!
+    }
+}
+
 
 class VersionCheck:NSObject {
     var alert:UIAlertController!
@@ -26,6 +61,24 @@ class VersionCheck:NSObject {
         let version = versionInfo["version"] as String
         let index = versionInfo["index"] as Int
         let des = versionInfo["des"] as String
+        let cityInfoIndex = versionInfo["city_info_index"] as Int
+        
+        // 判断是否需要更新城市信息
+        let defaults = NSUserDefaults()
+        var needUpdateCityInfo = false
+        
+        let cityIndexFromDefaults:AnyObject? = defaults.valueForKey("cityInfoIndex")
+        if(cityIndexFromDefaults == nil){
+            needUpdateCityInfo = true
+        }else{
+            let cityIndexFromDefaultsInt = cityIndexFromDefaults as Int
+            if(cityIndexFromDefaultsInt < cityInfoIndex){
+                needUpdateCityInfo = true
+            }
+        }
+        defaults.setValue(needUpdateCityInfo, forKey: "needUpdateCityInfo")
+        defaults.setValue(cityInfoIndex, forKey: "cityInfoIndex")
+        defaults.synchronize()
         
         if(index > VERSIONINDEX){
             alert = UIAlertController(title: "有新版本啦(\(version))", message: des, preferredStyle: UIAlertControllerStyle.Alert)
@@ -36,7 +89,7 @@ class VersionCheck:NSObject {
         else if(mustNotice){
             alert = UIAlertController(title: "", message: "已经是最新版本:\(VERSION)", preferredStyle: UIAlertControllerStyle.Alert)
             view.presentViewController(alert, animated: true, completion: nil)
-            
+
             NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: Selector("performDismiss:"), userInfo: nil, repeats: false)
         }
     }

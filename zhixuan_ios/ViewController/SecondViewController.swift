@@ -22,6 +22,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     let pageMaxCount = 10
     var pullView:UIView!
     var cityId:Int!
+//    var mustUpdateTable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +125,16 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         let ddc = segue.destinationViewController as DepartmentDetailController
         ddc.departmentObj = sender!.departmentObj
         ddc.img = sender!.departmentImageView!.image
+    }
+    
+    override func viewWillAppear(animated: Bool){
+        let cityFromDefault = self.defaults.stringForKey("cityId")?.toInt()
+        if(cityFromDefault != self.cityId){
+            self.cityId = cityFromDefault
+//            self.mustUpdateTable = true
+            self.pageCount = 1
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
+        }
     }
 }
 

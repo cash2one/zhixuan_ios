@@ -15,6 +15,7 @@ class ProvinceController: UITableViewController, HttpRequestProtocol {
     var httpRequest = HttpRequest()
     var provinceDatas:NSArray!
     var fc:FirstViewController!
+    let defaults = NSUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,22 @@ class ProvinceController: UITableViewController, HttpRequestProtocol {
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         self.httpRequest.delegate = self
-        self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_province_and_city")
+        getCityInfo()
+    }
+    
+    func getCityInfo(){
+        let cityInfo: AnyObject? = self.defaults.valueForKey("cityInfo")
+        var needUpdateCityInfo: AnyObject? = self.defaults.valueForKey("needUpdateCityInfo")
+        if(needUpdateCityInfo == nil){
+            needUpdateCityInfo = false
+        }
+        
+        if(cityInfo != nil && needUpdateCityInfo as Bool == false){
+            self.provinceDatas = cityInfo as NSArray
+            reloadTable()
+        }else{
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_province_and_city")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +82,16 @@ class ProvinceController: UITableViewController, HttpRequestProtocol {
     }
     
     func didRecieveResults(results:NSDictionary){
-        provinceDatas = results["data"] as NSArray
+        self.provinceDatas = results["data"] as NSArray
+        
+        self.defaults.setValue(provinceDatas, forKey: "cityInfo")
+        self.defaults.setValue(false, forKey: "needUpdateCityInfo")
+        self.defaults.synchronize()
+        
+        reloadTable()
+    }
+    
+    func reloadTable(){
         for provinceData in provinceDatas{
             self.provinces.append(provinceData["name"] as String)
         }
