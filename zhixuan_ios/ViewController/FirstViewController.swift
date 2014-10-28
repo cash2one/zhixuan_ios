@@ -21,8 +21,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
-    var cityId:Int!
-    var cityIdReSelect:Int?
+    var cityId:Int = 0
+    var cityIdReSelect:Int = 0
     var cityName = "选择城市"
     var rightBarButtonItem = UIBarButtonItem()
     
@@ -34,8 +34,14 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.cmTableView.tableFooterView = UIView(frame: CGRectZero)
         
         // 给城市id和name赋值
-        cityId = self.defaults.stringForKey("cityId")?.toInt()
-        cityName = self.defaults.stringForKey("cityName")!
+        let cityIdFromDefualt: AnyObject? = self.defaults.valueForKey("cityId")
+        let cityNameFromDefualt: AnyObject? = self.defaults.valueForKey("cityName")
+        if(cityIdFromDefualt != nil){
+            self.cityId = cityIdFromDefualt as Int
+        }
+        if(cityNameFromDefualt != nil){
+            self.cityName = cityNameFromDefualt as String
+        }
         
         
         self.httpRequest.delegate = self

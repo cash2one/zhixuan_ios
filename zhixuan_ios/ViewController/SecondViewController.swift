@@ -21,14 +21,17 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     var pageCount = 1
     let pageMaxCount = 10
     var pullView:UIView!
-    var cityId:Int!
+    var cityId:Int = 0
 //    var mustUpdateTable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         println("start2")
-        cityId = self.defaults.stringForKey("cityId")?.toInt()
+        let cityIdFromDefualt: AnyObject? = self.defaults.valueForKey("cityId")
+        if(cityIdFromDefualt != nil){
+            self.cityId = cityIdFromDefualt as Int
+        }
         self.httpRequest.delegate = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
@@ -129,8 +132,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(animated: Bool){
         let cityFromDefault = self.defaults.stringForKey("cityId")?.toInt()
-        if(cityFromDefault != self.cityId){
-            self.cityId = cityFromDefault
+        if(cityFromDefault != self.cityId && cityFromDefault != nil){
+            self.cityId = cityFromDefault!
 //            self.mustUpdateTable = true
             self.pageCount = 1
             self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")

@@ -101,14 +101,13 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
 //        self.cmOfDepartmentTable.frame = CGRectMake(16, 385, 350, 600)
 //        println(self.cmOfDepartmentTable.frame)
         
-        self.cmSrollView.contentSize = CGSize(width: 400, height: 1600)
+        self.cmSrollView.contentSize = CGSize(width: 320, height: 1600)
         
         self.cmOfDepartmentTable.reloadData()
         println(self.cmOfDepartmentTable.contentSize)
         
         println(self.cmOfDepartmentTable)
-        self.cmOfDepartmentTable.frame = CGRectMake(16, 385, 350, 248)
-        self.cmOfDepartmentTable.reloadData()
+        self.cmOfDepartmentTable.frame = CGRectMake(16, 331, 288, height)
         println(self.cmOfDepartmentTable)
         
     }
