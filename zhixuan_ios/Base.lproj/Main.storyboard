@@ -197,8 +197,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Qbi-Gg-ouB">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营业部名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="waw-1U-6Xi">
                                         <rect key="frame" x="16" y="98" width="288" height="32"/>
@@ -271,7 +271,7 @@
                                         <rect key="frame" x="85" y="0.0" width="150" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     客户经理" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="j67-xn-xaq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     营业部成员" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="j67-xn-xaq">
                                         <rect key="frame" x="16" y="287" width="288" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.91962466030000001" green="0.91962466030000001" blue="0.91962466030000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -281,7 +281,7 @@
                                         <size key="shadowOffset" width="10" height="-1"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" id="yQq-au-CAh">
-                                        <rect key="frame" x="16" y="331" width="288" height="92"/>
+                                        <rect key="frame" x="16" y="331" width="288" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -332,10 +332,10 @@
                                         </connections>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="描述" id="6f9-Tj-IlI">
-                                        <rect key="frame" x="16" y="482" width="288" height="170"/>
+                                        <rect key="frame" x="16" y="482" width="288" height="360"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -349,8 +349,10 @@
                         <outlet property="cmSrollView" destination="Qbi-Gg-ouB" id="u2V-UW-G7o"/>
                         <outlet property="imageViewDepartment" destination="P28-lc-PaL" id="nKG-Wm-eZD"/>
                         <outlet property="labelAddr" destination="B71-OM-vgG" id="wlX-gt-rS6"/>
+                        <outlet property="labelCmTitle" destination="j67-xn-xaq" id="II8-5t-pvr"/>
                         <outlet property="labelCompanyName" destination="g0U-BV-THS" id="RgB-Qe-icB"/>
                         <outlet property="labelDepartmentName" destination="waw-1U-6Xi" id="NYM-xa-9N6"/>
+                        <outlet property="labelDesTtile" destination="BCo-OK-Xcy" id="6p4-SA-4R9"/>
                         <outlet property="labelTel" destination="nmg-2U-CyJ" id="b7D-3e-scb"/>
                         <outlet property="textDes" destination="6f9-Tj-IlI" id="cvl-OA-81D"/>
                     </connections>
@@ -511,9 +513,9 @@
                                 <rect key="frame" x="10" y="20" width="300" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">股票开户通是一个股票开户平台，这里有全国300多个城市的的数千名认证的客户经理为需要股票开户的朋友提供咨询和指导服务；
+                                <string key="text">股票开户宝是一个股票开户平台，这里有全国341个城市的的数千名认证客户经理为需要股票开户的朋友提供咨询和指导服务；
 
-投资是门学问，要善学善问，股票开户后我们还提供了一个授业解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问理财问答社区「智选」，网址：http://zhixuan.com，后续app也即将推出，敬请期待</string>
+投资是门学问，要善学善问，股票开户后我们还提供了一个授业解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问投资问答社区「智选」，网址：http://www.zhixuan.com，后续app也即将推出，敬请期待</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -581,9 +583,7 @@
         <scene sceneID="KAx-DR-Tae">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ii3-cF-JsJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="营业部" id="cPa-gy-q4n">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="营业部" image="department1.png" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yr3-KN-f7Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -623,9 +623,7 @@
         <scene sceneID="WeM-85-tRt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6aC-mb-TSF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="客户经理" selectedImage="first" id="acW-dT-cKf">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="客户经理" image="cm1.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nta-kq-1Jg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -644,9 +642,7 @@
         <scene sceneID="KUp-y3-eSQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4nP-m2-lyD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="关于" id="aTm-Q3-09B">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="关于" image="me1.png" id="aTm-Q3-09B"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZDA-7C-aAA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -663,8 +659,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="cm1.png" width="30" height="30"/>
+        <image name="department1.png" width="30" height="30"/>
         <image name="icon_120m120.png" width="120" height="120"/>
+        <image name="me1.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

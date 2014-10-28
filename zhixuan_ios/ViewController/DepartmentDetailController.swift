@@ -18,6 +18,10 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var cmOfDepartmentTable: UITableView!
     @IBOutlet weak var cmSrollView: UIScrollView!
     
+    @IBOutlet weak var labelDesTtile: UILabel!
+    @IBOutlet weak var labelCmTitle: UILabel!
+    
+    
     var img:UIImage!
     var departmentObj:NSDictionary?
     var httpRequest = HttpRequest()
@@ -90,25 +94,24 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
     func didRecieveResults(results:NSDictionary){
         self.cmObjs = results["custom_managers"] as NSMutableArray
         if(self.cmObjs.count == 0){
-//            self.cmOfDepartmentTable.hidden = true
+            self.cmOfDepartmentTable.hidden = true
         }else{
-//            self.cmOfDepartmentTable.hidden = false
+            self.cmOfDepartmentTable.hidden = false
         }
         
-        
-        println(self.cmOfDepartmentTable.frame)
-        let height = CGFloat(65 * self.cmObjs.count)
-//        self.cmOfDepartmentTable.frame = CGRectMake(16, 385, 350, 600)
-//        println(self.cmOfDepartmentTable.frame)
-        
-        self.cmSrollView.contentSize = CGSize(width: 320, height: 1600)
-        
         self.cmOfDepartmentTable.reloadData()
-        println(self.cmOfDepartmentTable.contentSize)
         
+        let frameHeight = self.view.frame.height
+        let frameWidth = self.view.frame.width
+        let tableHeight = self.cmOfDepartmentTable.contentSize.height
+        let tableWidth = self.cmOfDepartmentTable.contentSize.width
+        
+        self.cmSrollView.contentSize = CGSize(width: 320, height: frameHeight + tableHeight + 100)
+        
+        println(self.cmOfDepartmentTable.contentSize)
         println(self.cmOfDepartmentTable)
-        self.cmOfDepartmentTable.frame = CGRectMake(16, 331, 288, height)
-        println(self.cmOfDepartmentTable)
+        
+        self.cmOfDepartmentTable.frame = CGRectMake(16, 331, tableWidth, tableHeight)
         
     }
     

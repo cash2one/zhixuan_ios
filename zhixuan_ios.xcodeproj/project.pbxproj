@@ -18,6 +18,8 @@
 		3628916D19EE4AF900A8B1EE /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628916419EE4AF900A8B1EE /* HttpRequest.swift */; };
 		3628916E19EE4AF900A8B1EE /* todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628916519EE4AF900A8B1EE /* todo.swift */; };
 		3628916F19EE4AF900A8B1EE /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628916619EE4AF900A8B1EE /* utils.swift */; };
+		3648516219FF4D7F00E8F9D2 /* cm1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3648515C19FF4D7F00E8F9D2 /* cm1.png */; };
+		3648516419FF4D7F00E8F9D2 /* department1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3648515E19FF4D7F00E8F9D2 /* department1.png */; };
 		3654B30B19F6333000EA7FDD /* customManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654B30A19F6333000EA7FDD /* customManagerCell.swift */; };
 		3665D2E319F4F9B300A55EFC /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3665D2DC19F4F9B300A55EFC /* arrow@2x.png */; };
 		3665D2E419F4F9B300A55EFC /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665D2DD19F4F9B300A55EFC /* Refresh.swift */; };
@@ -29,6 +31,7 @@
 		36880DA019FA341C0083FB9B /* icon_120m120.png in Resources */ = {isa = PBXBuildFile; fileRef = 36880D9F19FA341C0083FB9B /* icon_120m120.png */; };
 		36880DA219FA37270083FB9B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA119FA37270083FB9B /* AboutUsViewController.swift */; };
 		36880DA619FB78860083FB9B /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA519FB78860083FB9B /* ContactUsViewController.swift */; };
+		36C817A919FF6272000B0BA9 /* me1.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817A819FF6272000B0BA9 /* me1.png */; };
 		36CE257019D2DEE700E467E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE256F19D2DEE700E467E4 /* AppDelegate.swift */; };
 		36CE257719D2DEE800E467E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257519D2DEE800E467E4 /* Main.storyboard */; };
 		36CE257919D2DEE800E467E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257819D2DEE800E467E4 /* Images.xcassets */; };
@@ -58,6 +61,8 @@
 		3628916419EE4AF900A8B1EE /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		3628916519EE4AF900A8B1EE /* todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = todo.swift; sourceTree = "<group>"; };
 		3628916619EE4AF900A8B1EE /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		3648515C19FF4D7F00E8F9D2 /* cm1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cm1.png; sourceTree = "<group>"; };
+		3648515E19FF4D7F00E8F9D2 /* department1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = department1.png; sourceTree = "<group>"; };
 		3654B30A19F6333000EA7FDD /* customManagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customManagerCell.swift; sourceTree = "<group>"; };
 		3665D2DC19F4F9B300A55EFC /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		3665D2DD19F4F9B300A55EFC /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		36880D9F19FA341C0083FB9B /* icon_120m120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120m120.png; sourceTree = "<group>"; };
 		36880DA119FA37270083FB9B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		36880DA519FB78860083FB9B /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		36C817A819FF6272000B0BA9 /* me1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me1.png; sourceTree = "<group>"; };
 		36CE256A19D2DEE700E467E4 /* 股票开户宝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股票开户宝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE256E19D2DEE700E467E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE256F19D2DEE700E467E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +224,9 @@
 		36CE259119D2DF8900E467E4 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				36C817A819FF6272000B0BA9 /* me1.png */,
+				3648515C19FF4D7F00E8F9D2 /* cm1.png */,
+				3648515E19FF4D7F00E8F9D2 /* department1.png */,
 				36880D9F19FA341C0083FB9B /* icon_120m120.png */,
 			);
 			path = img;
@@ -310,7 +319,10 @@
 			files = (
 				36CE257719D2DEE800E467E4 /* Main.storyboard in Resources */,
 				36880DA019FA341C0083FB9B /* icon_120m120.png in Resources */,
+				3648516219FF4D7F00E8F9D2 /* cm1.png in Resources */,
 				3665D2E319F4F9B300A55EFC /* arrow@2x.png in Resources */,
+				3648516419FF4D7F00E8F9D2 /* department1.png in Resources */,
+				36C817A919FF6272000B0BA9 /* me1.png in Resources */,
 				36CE257C19D2DEE800E467E4 /* LaunchScreen.xib in Resources */,
 				36CE257919D2DEE800E467E4 /* Images.xcassets in Resources */,
 			);
