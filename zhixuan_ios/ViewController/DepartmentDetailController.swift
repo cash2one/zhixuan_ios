@@ -73,8 +73,10 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
         let rowData:NSDictionary = self.cmObjs[indexPath.row] as NSDictionary
         
         cell.nameLabel?.text = rowData["nick"] as? String
-        cell.telLabel?.text = rowData["mobile"] as? String
-        cell.qqLabel?.text = rowData["qq"] as? String
+        let tel = rowData["mobile"] as String
+        cell.telLabel?.text = "电话: \(tel)"
+        let qq = rowData["qq"] as String
+        cell.qqLabel?.text = "Q Q: \(qq)"
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         
         let img = httpRequest.getImage(rowData["img"] as String)
@@ -93,26 +95,44 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
     
     func didRecieveResults(results:NSDictionary){
         self.cmObjs = results["custom_managers"] as NSMutableArray
-        if(self.cmObjs.count == 0){
-            self.cmOfDepartmentTable.hidden = true
-        }else{
-            self.cmOfDepartmentTable.hidden = false
-        }
-        
         self.cmOfDepartmentTable.reloadData()
         
+        let tableInitHeight = CGFloat(90)
         let frameHeight = self.view.frame.height
         let frameWidth = self.view.frame.width
         let tableHeight = self.cmOfDepartmentTable.contentSize.height
         let tableWidth = self.cmOfDepartmentTable.contentSize.width
         
-        self.cmSrollView.contentSize = CGSize(width: 320, height: frameHeight + tableHeight + 100)
+        var cmTitleAndTableHeight = 0
+        if(self.cmObjs.count == 0){
+            self.labelCmTitle.hidden = true
+            self.cmOfDepartmentTable.hidden = true
+            cmTitleAndTableHeight = 140
+            self.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y - CGFloat(cmTitleAndTableHeight))
+            self.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y - CGFloat(cmTitleAndTableHeight))
+        }else{
+            self.cmOfDepartmentTable.hidden = false
+            self.labelCmTitle.hidden = false
+            self.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
+            self.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
+        }
         
-        println(self.cmOfDepartmentTable.contentSize)
-        println(self.cmOfDepartmentTable)
-        
+        var scrollHeight = frameHeight + tableHeight - tableInitHeight + 190
+        self.cmSrollView.contentSize = CGSize(width: 320, height: scrollHeight)
         self.cmOfDepartmentTable.frame = CGRectMake(16, 331, tableWidth, tableHeight)
         
+//        println(tableHeight)
+//        println(self.labelDesTtile)
+//        println(self.textDes)
+    }
+    
+    func setFrameY(view:UIView, offsetY:CGFloat){
+        let frame = view.frame
+        let x = frame.origin.x
+        let y = frame.origin.y
+        let w = frame.width
+        let h = frame.height
+        view.frame = CGRectMake(x, offsetY, w, h)
     }
     
     
