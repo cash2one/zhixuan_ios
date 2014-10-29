@@ -93,7 +93,7 @@ class HttpRequest:NSObject{
         return jsonResult
     }
     
-    func getImage(url:String) -> UIImage{
+    func getImage(url:String) -> UIImage?{
         let imgURL:NSURL = NSURL(string:url)!
         let request:NSURLRequest = NSURLRequest(URL:imgURL)
         var img:UIImage!

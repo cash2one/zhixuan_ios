@@ -32,6 +32,8 @@
 		36880DA219FA37270083FB9B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA119FA37270083FB9B /* AboutUsViewController.swift */; };
 		36880DA619FB78860083FB9B /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36880DA519FB78860083FB9B /* ContactUsViewController.swift */; };
 		36C817A919FF6272000B0BA9 /* me1.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817A819FF6272000B0BA9 /* me1.png */; };
+		36C817AC1A00E5BF000B0BA9 /* default_cm.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817AA1A00E5BF000B0BA9 /* default_cm.png */; };
+		36C817AD1A00E5BF000B0BA9 /* default_department.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817AB1A00E5BF000B0BA9 /* default_department.png */; };
 		36CE257019D2DEE700E467E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE256F19D2DEE700E467E4 /* AppDelegate.swift */; };
 		36CE257719D2DEE800E467E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257519D2DEE800E467E4 /* Main.storyboard */; };
 		36CE257919D2DEE800E467E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36CE257819D2DEE800E467E4 /* Images.xcassets */; };
@@ -75,6 +77,8 @@
 		36880DA119FA37270083FB9B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		36880DA519FB78860083FB9B /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		36C817A819FF6272000B0BA9 /* me1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me1.png; sourceTree = "<group>"; };
+		36C817AA1A00E5BF000B0BA9 /* default_cm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_cm.png; sourceTree = "<group>"; };
+		36C817AB1A00E5BF000B0BA9 /* default_department.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_department.png; sourceTree = "<group>"; };
 		36CE256A19D2DEE700E467E4 /* 股票开户宝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股票开户宝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE256E19D2DEE700E467E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE256F19D2DEE700E467E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 		36CE259119D2DF8900E467E4 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				36C817AA1A00E5BF000B0BA9 /* default_cm.png */,
+				36C817AB1A00E5BF000B0BA9 /* default_department.png */,
 				36C817A819FF6272000B0BA9 /* me1.png */,
 				3648515C19FF4D7F00E8F9D2 /* cm1.png */,
 				3648515E19FF4D7F00E8F9D2 /* department1.png */,
@@ -319,10 +325,12 @@
 			files = (
 				36CE257719D2DEE800E467E4 /* Main.storyboard in Resources */,
 				36880DA019FA341C0083FB9B /* icon_120m120.png in Resources */,
+				36C817AC1A00E5BF000B0BA9 /* default_cm.png in Resources */,
 				3648516219FF4D7F00E8F9D2 /* cm1.png in Resources */,
 				3665D2E319F4F9B300A55EFC /* arrow@2x.png in Resources */,
 				3648516419FF4D7F00E8F9D2 /* department1.png in Resources */,
 				36C817A919FF6272000B0BA9 /* me1.png in Resources */,
+				36C817AD1A00E5BF000B0BA9 /* default_department.png in Resources */,
 				36CE257C19D2DEE800E467E4 /* LaunchScreen.xib in Resources */,
 				36CE257919D2DEE800E467E4 /* Images.xcassets in Resources */,
 			);

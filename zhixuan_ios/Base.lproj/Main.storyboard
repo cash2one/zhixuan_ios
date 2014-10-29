@@ -481,11 +481,11 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2013 - 2014 zhixuan.com. All Rights Reserved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hTY-6E-8Ro">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2013 - 2014 zhixuan.com. All Rights Reserved." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hTY-6E-8Ro">
                                 <rect key="frame" x="6" y="485" width="308" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -515,7 +515,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">股票开户宝是一个股票开户平台，这里有全国341个城市的的数千名认证客户经理，为需要股票开户的朋友提供咨询和指导服务；
 
-投资是门学问，要善学善问，在股票开户后我们还提供了一个投资解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问投资问答社区「智选」，网址：http://www.zhixuan.com，后续app也即将推出，敬请期待</string>
+投资是门学问，要善学善问，在股票开户后我们还提供了一个投资解惑的平台，最新的财经资讯、最酷的问答一手掌握，欢迎访问投资问答社区「智选」，网址：http://www.zhixuan.com，后续app也即将推出，敬请期待。</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

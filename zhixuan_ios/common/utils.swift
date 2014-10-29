@@ -10,6 +10,9 @@ import UIKit
 
 class DebugUtils:NSObject {
     func printWithDate(info:AnyObject){
+        if(!DEBUG){
+            return
+        }
         let date = NSDate()
         print(date)
         print(" ---- ")

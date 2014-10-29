@@ -116,10 +116,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         cell.companyLabel?.text = rowData["company_name"] as? String
         
-        let img = httpRequest.getImage(rowData["img"] as String)
+        var img = httpRequest.getImage(rowData["img"] as String)
+        if(img == nil){
+            img = UIImage(named: "default_cm.png")
+        }
         cell.cmImageView?.image = img
         
-//        cmNav.title = "客户经理(共\(self.cmCount)位)"
+        // cmNav.title = "客户经理(共\(self.cmCount)位)"
         return cell
     }
     

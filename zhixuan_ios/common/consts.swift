@@ -8,9 +8,12 @@
 
 import Foundation
 
-let MAINDOMAIN = "http://kaihu.a.com:8000"
+
+let DEBUG = true
+let MAINDOMAIN = "http://kaihu.zhixuan.com"
 let VERSION = "1.0.0"
 let VERSIONINDEX = 1
 let CITYINFOVERSION = 1
+
 
 
