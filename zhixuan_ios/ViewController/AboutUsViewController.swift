@@ -34,7 +34,6 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var testTable: UITableView!
     
     override func viewDidLoad() {
-        println("start4")
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //注册动画

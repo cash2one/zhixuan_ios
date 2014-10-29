@@ -30,19 +30,20 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("start1")
         self.cmTableView.tableFooterView = UIView(frame: CGRectZero)
         
         // 给城市id和name赋值
+        
         let cityIdFromDefualt: AnyObject? = self.defaults.valueForKey("cityId")
         let cityNameFromDefualt: AnyObject? = self.defaults.valueForKey("cityName")
-        if(cityIdFromDefualt != nil){
-            self.cityId = cityIdFromDefualt as Int
-        }
         if(cityNameFromDefualt != nil){
             self.cityName = cityNameFromDefualt as String
         }
-        
+        if(cityIdFromDefualt != nil){
+            self.cityId = cityIdFromDefualt as Int
+        }else{
+            getCityByIp()   //同步获取城市信息
+        }
         
         self.httpRequest.delegate = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
@@ -50,7 +51,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         setupRefresh()  //注册动画
         setNav()    //设置右侧按钮
         checkVersion()  //版本检测
-        
+    }
+    
+    func setupRefresh(){
+        self.cmTableView.addFooterWithCallback({
+            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
+        })
     }
     
     func setNav(){
@@ -73,10 +79,19 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    func setupRefresh(){
-        self.cmTableView.addFooterWithCallback({
-            self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
-        })
+    func getCityByIp(){
+        // 首次进入的时候自动获取城市
+        
+        let cityInfo:NSDictionary = httpRequest.getResultsWithJsonSync("\(MAINDOMAIN)/kaihu/api_get_city_by_ip")
+        let cityName = cityInfo["city_name"] as String
+        let cityId = cityInfo["city_id"] as Int
+        self.cityId = cityId
+        self.cityName = cityName
+        
+        //数据持久化
+        self.defaults.setValue(cityId, forKey: "cityId")
+        self.defaults.setValue(cityName, forKey: "cityName")
+        self.defaults.synchronize()
     }
     
 

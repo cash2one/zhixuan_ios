@@ -57,6 +57,42 @@ class HttpRequest:NSObject{
         )
     }
     
+    func getResultsWithJsonSync(url:String)->NSDictionary{
+        var nsUrl:NSURL = NSURL(string:url)!
+        var request:NSURLRequest = NSURLRequest(URL: nsUrl)
+        var response:NSURLResponse?
+        var error:NSError?
+        var jsonResult:NSDictionary!
+        
+        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error:&error)
+        self.debug.printWithDate("sync get http response ok")
+        if(response == nil){
+            let alert = UIAlertView(title: "请检查网络", message: nil, delegate: nil, cancelButtonTitle: "确定")
+            alert.show()
+        }
+        else{
+            let httpResponse = response as NSHTTPURLResponse
+            if(httpResponse.statusCode != 200){
+                let alert = UIAlertView(title: "http请求错误：\(httpResponse.statusCode)", message: nil, delegate: nil, cancelButtonTitle: "确定")
+                alert.show()
+            }
+            else{
+                jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                
+                if(jsonResult!["errcode"] != nil)
+                {
+                    var errorCode = jsonResult["errcode"] as Int
+                    if (errorCode != 0){
+                        let alert = UIAlertView(title: jsonResult["errmsg"] as? String, message: nil, delegate: nil, cancelButtonTitle: "确定")
+                        alert.show()
+                    }
+                }
+            }
+        }
+        
+        return jsonResult
+    }
+    
     func getImage(url:String) -> UIImage{
         let imgURL:NSURL = NSURL(string:url)!
         let request:NSURLRequest = NSURLRequest(URL:imgURL)

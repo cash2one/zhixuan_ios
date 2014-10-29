@@ -24,7 +24,6 @@ class AboutViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.aboutTableView.tableFooterView = UIView(frame: CGRectZero)
         versionLabel.text = "当前版本:\(VERSION)"
         httpRequest.delegate = self
-        println("start3")
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +58,7 @@ class AboutViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if(indexPath.row == 0){
             let auv = self.storyboard?.instantiateViewControllerWithIdentifier("aboutUsStoryboardId") as AboutUsViewController
-            self.navigationController?.pushViewController(auv, animated: false)
+            self.navigationController?.pushViewController(auv, animated: true)
         }
         if(indexPath.row == 1){
             let cuv = self.storyboard?.instantiateViewControllerWithIdentifier("contactUsStoryboardId") as ContactUsViewController

@@ -27,7 +27,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("start2")
         let cityIdFromDefualt: AnyObject? = self.defaults.valueForKey("cityId")
         if(cityIdFromDefualt != nil){
             self.cityId = cityIdFromDefualt as Int
@@ -118,6 +117,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         // 最后一页隐藏
         if(departmentAddObjs.count < self.pageMaxCount){
             self.departmentTableView.setFooterHidden(true)
+        }else{
+            self.departmentTableView.setFooterHidden(false)
         }
         self.pageCount += 1
         
