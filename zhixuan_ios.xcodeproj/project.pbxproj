@@ -34,6 +34,8 @@
 		36A500911A021DB500EFEEBE /* department1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A5008E1A021DB500EFEEBE /* department1@2x.png */; };
 		36A500921A021DB500EFEEBE /* me1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A5008F1A021DB500EFEEBE /* me1@2x.png */; };
 		36A500931A021DB500EFEEBE /* cm1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A500901A021DB500EFEEBE /* cm1@2x.png */; };
+		36A5009B1A0227A200EFEEBE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A500991A0227A200EFEEBE /* libMobClickLibrary.a */; };
+		36A5009D1A0227EA00EFEEBE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A5009C1A0227EA00EFEEBE /* libz.dylib */; };
 		36C817A919FF6272000B0BA9 /* me1.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817A819FF6272000B0BA9 /* me1.png */; };
 		36C817AC1A00E5BF000B0BA9 /* default_cm.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817AA1A00E5BF000B0BA9 /* default_cm.png */; };
 		36C817AD1A00E5BF000B0BA9 /* default_department.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C817AB1A00E5BF000B0BA9 /* default_department.png */; };
@@ -82,6 +84,10 @@
 		36A5008E1A021DB500EFEEBE /* department1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "department1@2x.png"; sourceTree = "<group>"; };
 		36A5008F1A021DB500EFEEBE /* me1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me1@2x.png"; sourceTree = "<group>"; };
 		36A500901A021DB500EFEEBE /* cm1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cm1@2x.png"; sourceTree = "<group>"; };
+		36A500991A0227A200EFEEBE /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		36A5009A1A0227A200EFEEBE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		36A5009C1A0227EA00EFEEBE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		36A5009E1A022FA000EFEEBE /* zhixuan_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zhixuan_ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		36C817A819FF6272000B0BA9 /* me1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me1.png; sourceTree = "<group>"; };
 		36C817AA1A00E5BF000B0BA9 /* default_cm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_cm.png; sourceTree = "<group>"; };
 		36C817AB1A00E5BF000B0BA9 /* default_department.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_department.png; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A5009D1A0227EA00EFEEBE /* libz.dylib in Frameworks */,
+				36A5009B1A0227A200EFEEBE /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,7 @@
 		3628917019EE4D0700A8B1EE /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				36A500981A0227A200EFEEBE /* umeng */,
 				3665D2DB19F4F9B300A55EFC /* Refresh */,
 			);
 			path = FrameWork;
@@ -171,9 +180,19 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		36A500981A0227A200EFEEBE /* umeng */ = {
+			isa = PBXGroup;
+			children = (
+				36A500991A0227A200EFEEBE /* libMobClickLibrary.a */,
+				36A5009A1A0227A200EFEEBE /* MobClick.h */,
+			);
+			path = umeng;
+			sourceTree = "<group>";
+		};
 		36CE256119D2DEE700E467E4 = {
 			isa = PBXGroup;
 			children = (
+				36A5009C1A0227EA00EFEEBE /* libz.dylib */,
 				36CE256C19D2DEE700E467E4 /* zhixuan_ios */,
 				36CE258419D2DEE800E467E4 /* zhixuan_iosTests */,
 				36CE256B19D2DEE700E467E4 /* Products */,
@@ -202,6 +221,7 @@
 				3628917019EE4D0700A8B1EE /* FrameWork */,
 				36CE259119D2DF8900E467E4 /* img */,
 				36CE256D19D2DEE700E467E4 /* Supporting Files */,
+				36A5009E1A022FA000EFEEBE /* zhixuan_ios-Bridging-Header.h */,
 			);
 			path = zhixuan_ios;
 			sourceTree = "<group>";
@@ -506,14 +526,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = zhixuan_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhixuan_ios/FrameWork/umeng",
+				);
 				PRODUCT_MODULE_NAME = "股票开户宝";
 				PRODUCT_NAME = "股票开户宝";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "zhixuan_ios/zhixuan_ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -521,14 +548,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = zhixuan_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhixuan_ios/FrameWork/umeng",
+				);
 				PRODUCT_MODULE_NAME = "股票开户宝";
 				PRODUCT_NAME = "股票开户宝";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "zhixuan_ios/zhixuan_ios-Bridging-Header.h";
 			};
 			name = Release;
 		};

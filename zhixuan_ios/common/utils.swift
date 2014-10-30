@@ -112,6 +112,20 @@ func goToAppStore(){
     UIApplication.sharedApplication().openURL(NSURL(string: "itms://itunes.apple.com/de/app/x-gift/id839686104?mt=8&uo=4")!)
 }
 
+func getDeviceId()->String{
+    return UIDevice.currentDevice().identifierForVendor.UUIDString
+    
+//    let cls: AnyClass! = NSClassFromString("UMANUtil")
+//    let deviceIDSelector = Selector("openUDIDString:")
+//    var deviceId = ""
+//    if(cls != nil){
+//        cls.respondsToSelector(deviceIDSelector)
+//        let cls1 = cls as NMANUtil
+//        deviceId = cls.performSelector(deviceIDSelector)
+//    }
+//    return deviceId
+}
+
 
 
 
