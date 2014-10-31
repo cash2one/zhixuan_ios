@@ -97,7 +97,10 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
         self.cmObjs = results["custom_managers"] as NSMutableArray
         self.cmOfDepartmentTable.reloadData()
         
+        let frameUtilsObj = FrameUtils()
         let tableInitHeight = CGFloat(90)
+        let desTextInitHeight = CGFloat(85)
+        
         let frameHeight = self.view.frame.height
         let frameWidth = self.view.frame.width
         let tableHeight = self.cmOfDepartmentTable.contentSize.height
@@ -108,32 +111,27 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
             self.labelCmTitle.hidden = true
             self.cmOfDepartmentTable.hidden = true
             cmTitleAndTableHeight = 140
-            self.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y - CGFloat(cmTitleAndTableHeight))
-            self.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y - CGFloat(cmTitleAndTableHeight))
+            frameUtilsObj.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y - CGFloat(cmTitleAndTableHeight))
+            frameUtilsObj.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y - CGFloat(cmTitleAndTableHeight))
         }else{
             self.cmOfDepartmentTable.hidden = false
             self.labelCmTitle.hidden = false
-            self.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
-            self.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
+            frameUtilsObj.setFrameY(self.labelDesTtile, offsetY: self.labelDesTtile.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
+            frameUtilsObj.setFrameY(self.textDes, offsetY: self.textDes.frame.origin.y + tableHeight - tableInitHeight - CGFloat(cmTitleAndTableHeight))
         }
         
-        var scrollHeight = frameHeight + tableHeight - tableInitHeight + 190
-        self.cmSrollView.contentSize = CGSize(width: 320, height: scrollHeight)
-        self.cmOfDepartmentTable.frame = CGRectMake(16, 331, tableWidth, tableHeight)
+        var scrollHeight = frameHeight + tableHeight - tableInitHeight + self.textDes.contentSize.height - desTextInitHeight
+        self.cmSrollView.contentSize = CGSize(width: frameWidth, height: scrollHeight)
+        
+        frameUtilsObj.setFrameSize(self.cmOfDepartmentTable, width: tableWidth, height: tableHeight)
+        frameUtilsObj.setFrameSize(self.textDes, width: self.textDes.contentSize.width, height: self.textDes.contentSize.height)
         
 //        println(tableHeight)
 //        println(self.labelDesTtile)
 //        println(self.textDes)
     }
     
-    func setFrameY(view:UIView, offsetY:CGFloat){
-        let frame = view.frame
-        let x = frame.origin.x
-        let y = frame.origin.y
-        let w = frame.width
-        let h = frame.height
-        view.frame = CGRectMake(x, offsetY, w, h)
-    }
+
     
     
 }

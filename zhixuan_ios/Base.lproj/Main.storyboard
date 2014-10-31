@@ -332,7 +332,7 @@
                                         <size key="shadowOffset" width="10" height="-1"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="描述" id="6f9-Tj-IlI">
-                                        <rect key="frame" x="16" y="483" width="288" height="360"/>
+                                        <rect key="frame" x="16" y="483" width="288" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>

@@ -72,7 +72,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func checkVersion(){
         let lastCheckVersionDate = self.defaults.stringForKey("lastCheckVersionDate")
-        let currentDate = DateUtil().changeCurrentDateAsString("yyyy-MM-dd")
+        let currentDate = DateUtils().changeCurrentDateAsString("yyyy-MM-dd")
         //版本一天检测一次
         if(lastCheckVersionDate < currentDate){
             self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/static/app/ios.json")
@@ -136,7 +136,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didRecieveResults(results:NSDictionary){
         if(results["version"] != nil){
-            let lastCheckVersionDate = DateUtil().changeCurrentDateAsString("yyyy-MM-dd")
+            let lastCheckVersionDate = DateUtils().changeCurrentDateAsString("yyyy-MM-dd")
             self.defaults.setValue(lastCheckVersionDate, forKey: "lastCheckVersionDate")    //设置时间戳，每天检测一次升级
             self.defaults.synchronize()
             

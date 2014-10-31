@@ -13,15 +13,15 @@ class DebugUtils:NSObject {
         if(!DEBUG){
             return
         }
-        let date = NSDate()
-        print(date)
+//        let date = NSDate()
+        print(DateUtils().changeCurrentDateAsString(nil))
         print(" ---- ")
         print(info)
         println("")
     }
 }
 
-class DateUtil:NSObject {
+class DateUtils:NSObject {
     func changeCurrentDateAsString(format:String?)->NSString{
         //获取当前日期字符串
         
@@ -114,16 +114,27 @@ func goToAppStore(){
 
 func getDeviceId()->String{
     return UIDevice.currentDevice().identifierForVendor.UUIDString
+}
+
+
+class FrameUtils:NSObject {
+    func setFrameY(view:UIView, offsetY:CGFloat){
+        let frame = view.frame
+        let x = frame.origin.x
+        let y = frame.origin.y
+        let w = frame.width
+        let h = frame.height
+        view.frame = CGRectMake(x, offsetY, w, h)
+    }
     
-//    let cls: AnyClass! = NSClassFromString("UMANUtil")
-//    let deviceIDSelector = Selector("openUDIDString:")
-//    var deviceId = ""
-//    if(cls != nil){
-//        cls.respondsToSelector(deviceIDSelector)
-//        let cls1 = cls as NMANUtil
-//        deviceId = cls.performSelector(deviceIDSelector)
-//    }
-//    return deviceId
+    func setFrameSize(view:UIView, width:CGFloat, height:CGFloat){
+        let frame = view.frame
+        let x = frame.origin.x
+        let y = frame.origin.y
+        let w = frame.width
+        let h = frame.height
+        view.frame = CGRectMake(x, y, width, height)
+    }
 }
 
 
