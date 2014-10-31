@@ -25,7 +25,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var cityIdReSelect:Int = 0
     var cityName = "选择城市"
     var rightBarButtonItem = UIBarButtonItem()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,13 +105,19 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         return self.cmObjs.count
     }
     
+    func callThePhone(sender:UIButton){
+        showPhone(sender.currentTitle!, self.view)
+    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let rowData:NSDictionary = self.cmObjs[indexPath.row] as NSDictionary        
         let cell = tableView.dequeueReusableCellWithIdentifier("customManager") as CustomManagerCell
         
         cell.nameLabel?.text = rowData["nick"] as? String
-        cell.telLabel?.text = rowData["mobile"] as? String
+        cell.telButton.setTitle(rowData["mobile"] as? String, forState: UIControlState.Normal)
+        cell.telButton.addTarget(self, action: Selector("callThePhone:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         cell.qqLabel?.text = rowData["qq"] as? String
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         cell.companyLabel?.text = rowData["company_name"] as? String

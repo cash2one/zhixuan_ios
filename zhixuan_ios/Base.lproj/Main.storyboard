@@ -70,13 +70,15 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l8P-RV-DCd">
-                                                    <rect key="frame" x="205" y="53" width="198" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HjC-BA-4dD">
+                                                    <rect key="frame" x="205" y="53" width="107" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" red="0.50980395078659058" green="0.60784316062927246" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -84,7 +86,7 @@
                                             <outlet property="companyLabel" destination="tCA-tA-YPi" id="GvD-ZQ-TTT"/>
                                             <outlet property="nameLabel" destination="wlG-MG-fyB" id="gni-KP-d9T"/>
                                             <outlet property="qqLabel" destination="tHO-EB-oM7" id="nwH-ab-p3B"/>
-                                            <outlet property="telLabel" destination="l8P-RV-DCd" id="WIe-YN-gYH"/>
+                                            <outlet property="telButton" destination="HjC-BA-4dD" id="zSC-qR-K0c"/>
                                             <outlet property="vipInfoLabel" destination="f3D-BK-yd4" id="rl9-8n-vbl"/>
                                         </connections>
                                     </tableViewCell>
@@ -137,14 +139,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Bt-bO-y79">
-                                                    <rect key="frame" x="83" y="34" width="210" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yMR-tR-2D2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yMR-tR-2D2">
                                                     <rect key="frame" x="83" y="56" width="229" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -158,6 +153,13 @@
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uJQ-bj-I4i">
+                                                    <rect key="frame" x="83" y="34" width="210" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -165,7 +167,7 @@
                                             <outlet property="cmCountLabel" destination="u3f-Ai-mLp" id="2y4-Gd-IqW"/>
                                             <outlet property="departmentImageView" destination="e7B-96-1yf" id="dWg-L7-bNu"/>
                                             <outlet property="nameLabel" destination="Zpm-c7-AZi" id="Kks-Ad-XdI"/>
-                                            <outlet property="telLabel" destination="0Bt-bO-y79" id="9TA-Mw-wI7"/>
+                                            <outlet property="telLabel" destination="uJQ-bj-I4i" id="fKP-VM-BGP"/>
                                             <segue destination="n7j-7O-knq" kind="push" id="scy-J0-HV9"/>
                                         </connections>
                                     </tableViewCell>
@@ -228,13 +230,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nmg-2U-CyJ">
-                                        <rect key="frame" x="94" y="211" width="267" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B71-OM-vgG">
                                         <rect key="frame" x="94" y="240" width="210" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -290,7 +285,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xjs-3G-MKD">
-                                                            <rect key="frame" x="68" y="6" width="200" height="21"/>
+                                                            <rect key="frame" x="68" y="6" width="120" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -307,20 +302,6 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q Q" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HVA-cp-VHb">
-                                                            <rect key="frame" x="68" y="55" width="34" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NEJ-TY-cUs">
-                                                            <rect key="frame" x="149" y="33" width="131" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wi6-J8-veQ">
                                                             <rect key="frame" x="68" y="33" width="34" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,13 +309,37 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q Q" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HVA-cp-VHb">
+                                                            <rect key="frame" x="68" y="55" width="34" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职务" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9ht-5X-DUU">
+                                                            <rect key="frame" x="196" y="6" width="79" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5F4-Db-9R1">
+                                                            <rect key="frame" x="149" y="33" width="131" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" red="0.50980395079999996" green="0.60784316059999999" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="cmImageView" destination="uFn-bJ-n1s" id="Mwn-ts-zix"/>
                                                     <outlet property="nameLabel" destination="Xjs-3G-MKD" id="xlu-iL-vH9"/>
                                                     <outlet property="qqLabel" destination="eeW-AJ-jjV" id="uU1-eJ-cSX"/>
-                                                    <outlet property="telLabel" destination="NEJ-TY-cUs" id="NAA-PO-jfm"/>
+                                                    <outlet property="telButton" destination="5F4-Db-9R1" id="kjm-Qe-sSv"/>
+                                                    <outlet property="vipInfoLabel" destination="9ht-5X-DUU" id="uU2-mz-Qo4"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -359,6 +364,15 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NcB-54-bI0">
+                                        <rect key="frame" x="94" y="211" width="267" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.50980395079999996" green="0.60784316059999999" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -366,6 +380,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="营业部详情" id="RpU-3y-Oq0"/>
                     <connections>
+                        <outlet property="buttonTel" destination="NcB-54-bI0" id="8fQ-Ym-v4l"/>
                         <outlet property="cmOfDepartmentTable" destination="yQq-au-CAh" id="bjr-pu-nXq"/>
                         <outlet property="cmSrollView" destination="Qbi-Gg-ouB" id="u2V-UW-G7o"/>
                         <outlet property="imageViewDepartment" destination="P28-lc-PaL" id="nKG-Wm-eZD"/>
@@ -374,7 +389,6 @@
                         <outlet property="labelCompanyName" destination="g0U-BV-THS" id="RgB-Qe-icB"/>
                         <outlet property="labelDepartmentName" destination="waw-1U-6Xi" id="NYM-xa-9N6"/>
                         <outlet property="labelDesTtile" destination="BCo-OK-Xcy" id="6p4-SA-4R9"/>
-                        <outlet property="labelTel" destination="nmg-2U-CyJ" id="b7D-3e-scb"/>
                         <outlet property="textDes" destination="6f9-Tj-IlI" id="cvl-OA-81D"/>
                     </connections>
                 </viewController>

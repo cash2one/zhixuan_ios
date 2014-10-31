@@ -55,6 +55,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return self.departmentObjs.count
     }
     
+    func callThePhone(sender:UIButton){
+        showPhone(sender.currentTitle!, self.view)
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let rowData:NSDictionary = self.departmentObjs[indexPath.row] as NSDictionary
@@ -64,6 +67,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         cell.nameLabel.text = rowData["short_name"] as? String
         let tel = rowData["tel"] as String
         cell.telLabel.text = "电话: \(tel)"
+        
+//        cell.telButton.setTitle(tel, forState: UIControlState.Normal)
+//        cell.telButton.addTarget(self, action: Selector("callThePhone:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
         let addr = rowData["addr"] as String
         cell.addrLabel.text = "地址: \(addr)"
         
@@ -76,9 +84,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             cell.cmCountLabel.hidden = false
         }
         
-//        let img = httpRequest.getImageSync(rowData["img"] as String)
-//        cell.departmentImageView?.image = img
-        
+        cell.departmentImageView.image = UIImage(named: "default_department.png")
         let imageTag = indexPath.row + 1
         cell.departmentImageView.tag = imageTag
         httpRequest.getImageAsync(rowData["img"] as String, tag: imageTag)

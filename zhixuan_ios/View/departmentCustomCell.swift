@@ -14,6 +14,7 @@ class DepartmentCell: UITableViewCell {
     @IBOutlet weak var departmentImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var telLabel: UILabel!
+//    @IBOutlet weak var telButton: UIButton!
     @IBOutlet weak var cmCountLabel: UILabel!
     @IBOutlet weak var addrLabel: UILabel!
     

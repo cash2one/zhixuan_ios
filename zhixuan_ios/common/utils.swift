@@ -138,6 +138,19 @@ class FrameUtils:NSObject {
 }
 
 
+func showPhone(phone:String, view:UIView){
+    //将电话号码显示在拨号键盘
+    if(UIDevice.currentDevice().model == "iPhone"){
+        let telStr = "tel:\(phone)"
+        let callView = UIWebView()
+        
+        callView.loadRequest(NSURLRequest(URL: NSURL(string: telStr)!))
+        view.addSubview(view)
+        //UIApplication.sharedApplication().openURL(NSURL(string: telStr)!)
+    }
+}
+
+
 
 
 

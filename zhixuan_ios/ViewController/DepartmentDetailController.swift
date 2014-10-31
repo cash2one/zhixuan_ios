@@ -12,7 +12,7 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var labelDepartmentName: UILabel!
     @IBOutlet weak var imageViewDepartment: UIImageView!
     @IBOutlet weak var labelCompanyName: UILabel!
-    @IBOutlet weak var labelTel: UILabel!
+    @IBOutlet weak var buttonTel: UIButton!
     @IBOutlet weak var labelAddr: UILabel!
     @IBOutlet weak var textDes: UITextView!
     @IBOutlet weak var cmOfDepartmentTable: UITableView!
@@ -27,13 +27,20 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
     var httpRequest = HttpRequest()
     var cmObjs = NSMutableArray()
     
+    func callThePhone(sender:UIButton){
+        showPhone(sender.currentTitle!, self.view)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         labelDepartmentName.text = departmentObj!["short_name"] as? String
         imageViewDepartment.image = img
         labelCompanyName.text = departmentObj!["company_name"] as? String
-        labelTel.text = departmentObj!["tel"] as? String
+        
+//        labelTel.text = departmentObj!["tel"] as? String
+        buttonTel.setTitle(departmentObj!["tel"] as? String, forState: UIControlState.Normal)
+        buttonTel.addTarget(self, action: Selector("callThePhone:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         labelAddr.text = departmentObj!["addr"] as? String
         
         //转换html后再textview中显示
@@ -74,15 +81,18 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
         let rowData:NSDictionary = self.cmObjs[indexPath.row] as NSDictionary
         
         cell.nameLabel?.text = rowData["nick"] as? String
+        
         let tel = rowData["mobile"] as String
-        cell.telLabel?.text = "\(tel)"
+//        cell.telLabel?.text = "\(tel)"
+        cell.telButton.setTitle(tel, forState: UIControlState.Normal)
+        cell.telButton.addTarget(self, action: Selector("callThePhone:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
         let qq = rowData["qq"] as String
         cell.qqLabel?.text = "\(qq)"
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         
-//        let img = httpRequest.getImageSync(rowData["img"] as String)
-//        cell.cmImageView?.image = img
-        
+        cell.cmImageView.image = UIImage(named: "default_cm.png")
         let imageTag = indexPath.row + 1
         cell.cmImageView.tag = imageTag
         httpRequest.getImageAsync(rowData["img"] as String, tag: imageTag)
