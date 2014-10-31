@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol, SelectCityProtocol, UIAlertViewDelegate {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GetResultsWithJsonAsynctProtocol, SelectCityProtocol, getImageAsyncAsynctProtocol {
     
     @IBOutlet weak var cmTableView: UITableView!
     @IBOutlet weak var cmNav: UINavigationItem!
@@ -46,6 +46,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         self.httpRequest.delegate = self
+        self.httpRequest.delegateImage = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
         setupRefresh()  //注册动画
@@ -116,11 +117,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         cell.companyLabel?.text = rowData["company_name"] as? String
         
-        var img = httpRequest.getImage(rowData["img"] as String)
-        if(img == nil){
-            img = UIImage(named: "default_cm.png")
-        }
-        cell.cmImageView?.image = img
+        cell.cmImageView.image = UIImage(named: "default_cm.png")
+        let imageTag = indexPath.row + 1
+        cell.cmImageView.tag = imageTag
+        httpRequest.getImageAsync(rowData["img"] as String, tag: imageTag)
         
         // cmNav.title = "客户经理(共\(self.cmCount)位)"
         return cell
@@ -193,7 +193,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.pageCount = 1
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list?page=\(self.pageCount)&city_id=\(self.cityId)")
     }
-
+    
+    func showImage(img:UIImage, tag:Int){
+        let imageView = self.view.viewWithTag(tag) as UIImageView
+        imageView.image = img
+    }
 
 }
 

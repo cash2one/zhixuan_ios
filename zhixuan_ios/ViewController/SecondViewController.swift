@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol {
+class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GetResultsWithJsonAsynctProtocol, getImageAsyncAsynctProtocol {
 
     @IBOutlet weak var departmentTableView: UITableView!
     @IBOutlet weak var departmentNavItem: UINavigationItem!
@@ -32,6 +32,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             self.cityId = cityIdFromDefualt as Int
         }
         self.httpRequest.delegate = self
+        self.httpRequest.delegateImage = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         
         //注册动画
@@ -75,8 +76,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             cell.cmCountLabel.hidden = false
         }
         
-        let img = httpRequest.getImage(rowData["img"] as String)
-        cell.departmentImageView?.image = img
+//        let img = httpRequest.getImageSync(rowData["img"] as String)
+//        cell.departmentImageView?.image = img
+        
+        let imageTag = indexPath.row + 1
+        cell.departmentImageView.tag = imageTag
+        httpRequest.getImageAsync(rowData["img"] as String, tag: imageTag)
+        
         cell.departmentObj = rowData
         
         return cell
@@ -139,6 +145,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             self.pageCount = 1
             self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_department_list?page=\(self.pageCount)&city_id=\(self.cityId)")
         }
+    }
+    
+    func showImage(img:UIImage, tag:Int){
+        let imageView = self.view.viewWithTag(tag) as UIImageView
+        imageView.image = img
     }
 }
 

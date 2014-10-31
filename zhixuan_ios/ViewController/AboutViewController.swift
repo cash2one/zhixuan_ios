@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol {
+class AboutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GetResultsWithJsonAsynctProtocol {
     
     @IBOutlet weak var aboutTableView: UITableView!
     @IBOutlet weak var versionLabel: UILabel!

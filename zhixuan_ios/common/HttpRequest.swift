@@ -8,13 +8,18 @@
 
 import UIKit
 
-protocol HttpRequestProtocol{
+protocol GetResultsWithJsonAsynctProtocol{
     func didRecieveResults(results:NSDictionary)
+}
+
+protocol getImageAsyncAsynctProtocol{
+    func showImage(img:UIImage, tag:Int)
 }
 
 
 class HttpRequest:NSObject{
-    var delegate:HttpRequestProtocol?
+    var delegate:GetResultsWithJsonAsynctProtocol?
+    var delegateImage:getImageAsyncAsynctProtocol?
     var debug = DebugUtils()
     
     func getResultsWithJson(url:String){
@@ -93,7 +98,7 @@ class HttpRequest:NSObject{
         return jsonResult
     }
     
-    func getImage(url:String) -> UIImage?{
+    func getImageSync(url:String) -> UIImage?{
         let imgURL:NSURL = NSURL(string:url)!
         let request:NSURLRequest = NSURLRequest(URL:imgURL)
         var img:UIImage!
@@ -101,6 +106,27 @@ class HttpRequest:NSObject{
         var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
         img = UIImage(data: data!)
         return img
+    }
+    
+    func getImageAsync(url:String, tag:Int){
+        var nsUrl:NSURL = NSURL(string:url)!
+        var request:NSURLRequest = NSURLRequest(URL: nsUrl)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(),
+            completionHandler: {
+                (response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
+//                self.debug.printWithDate("get image async ok")
+                if(response == nil){
+                    return
+                }
+        
+                let httpResponse = response as NSHTTPURLResponse
+                if(httpResponse.statusCode == 200){
+                    let img = UIImage(data: data!)
+                    self.delegateImage?.showImage(img!, tag: tag)
+                }
+            }
+        )
     }
 }
 

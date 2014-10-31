@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ProvinceController: UITableViewController, HttpRequestProtocol {
+class ProvinceController: UITableViewController, GetResultsWithJsonAsynctProtocol {
     
     var provinces = Array([])
     var httpRequest = HttpRequest()

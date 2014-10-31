@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DepartmentDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpRequestProtocol {
+class DepartmentDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate, GetResultsWithJsonAsynctProtocol, getImageAsyncAsynctProtocol {
     @IBOutlet weak var labelDepartmentName: UILabel!
     @IBOutlet weak var imageViewDepartment: UIImageView!
     @IBOutlet weak var labelCompanyName: UILabel!
@@ -51,6 +51,7 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
         
         let department_id = departmentObj!["id"] as Int
         self.httpRequest.delegate = self
+        self.httpRequest.delegateImage = self
         self.httpRequest.getResultsWithJson("\(MAINDOMAIN)/kaihu/api_get_custom_manager_list_of_department?department_id=\(department_id)")
     }
     
@@ -74,13 +75,18 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
         
         cell.nameLabel?.text = rowData["nick"] as? String
         let tel = rowData["mobile"] as String
-        cell.telLabel?.text = "电话: \(tel)"
+        cell.telLabel?.text = "\(tel)"
         let qq = rowData["qq"] as String
-        cell.qqLabel?.text = "Q Q: \(qq)"
+        cell.qqLabel?.text = "\(qq)"
         cell.vipInfoLabel?.text = rowData["vip_info"] as? String
         
-        let img = httpRequest.getImage(rowData["img"] as String)
-        cell.cmImageView?.image = img
+//        let img = httpRequest.getImageSync(rowData["img"] as String)
+//        cell.cmImageView?.image = img
+        
+        let imageTag = indexPath.row + 1
+        cell.cmImageView.tag = imageTag
+        httpRequest.getImageAsync(rowData["img"] as String, tag: imageTag)
+        
         
         return cell
     }
@@ -131,7 +137,9 @@ class DepartmentDetailController: UIViewController, UITableViewDataSource, UITab
 //        println(self.textDes)
     }
     
-
-    
+    func showImage(img:UIImage, tag:Int){
+        let imageView = self.view.viewWithTag(tag) as UIImageView
+        imageView.image = img
+    }
     
 }
