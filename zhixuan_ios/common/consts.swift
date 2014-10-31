@@ -9,7 +9,7 @@
 import Foundation
 
 
-let DEBUG = true
+let DEBUG = false
 let MAINDOMAIN = "http://kaihu.zhixuan.com"
 let VERSION = "1.0.0"
 let VERSIONINDEX = 1
