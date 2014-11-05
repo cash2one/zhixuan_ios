@@ -90,7 +90,7 @@ class VersionCheck:NSObject {
             view.presentViewController(alert, animated: true, completion: nil)
         }
         else if(mustNotice){
-            alert = UIAlertController(title: "", message: "已经是最新版本:\(VERSION)", preferredStyle: UIAlertControllerStyle.Alert)
+            alert = UIAlertController(title: "版本检测", message: "已经是最新版本:\(VERSION)", preferredStyle: UIAlertControllerStyle.Alert)
             view.presentViewController(alert, animated: true, completion: nil)
 
             NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: Selector("performDismiss:"), userInfo: nil, repeats: false)
@@ -108,8 +108,7 @@ class VersionCheck:NSObject {
 }
 
 func goToAppStore(){
-//    UIApplication.sharedApplication().openURL(NSURL(string: "http://www.baidu.com")!)
-    UIApplication.sharedApplication().openURL(NSURL(string: "itms://itunes.apple.com/de/app/x-gift/id839686104?mt=8&uo=4")!)
+    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/us/app/gu-piao-kai-hu-bao/id937138176?mt=8")!)
 }
 
 func getDeviceId()->String{
@@ -141,12 +140,14 @@ class FrameUtils:NSObject {
 func showPhone(phone:String, view:UIView){
     //将电话号码显示在拨号键盘
     if(UIDevice.currentDevice().model == "iPhone"){
-        let telStr = "tel:\(phone)"
-        let callView = UIWebView()
-        
+        var telStr = "tel:\(phone)"
+
+        let callView = UIWebView(frame: CGRectMake(0, 0, 300, 300))
         callView.loadRequest(NSURLRequest(URL: NSURL(string: telStr)!))
-        view.addSubview(view)
-        //UIApplication.sharedApplication().openURL(NSURL(string: telStr)!)
+//        view.addSubview(view)
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: telStr)!)
+        
     }
 }
 

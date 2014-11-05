@@ -55,9 +55,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return self.departmentObjs.count
     }
     
-    func callThePhone(sender:UIButton){
-        showPhone(sender.currentTitle!, self.view)
-    }
+//    func callThePhone(sender:UIButton){
+//        showPhone(sender.currentTitle!, self.view)
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let rowData:NSDictionary = self.departmentObjs[indexPath.row] as NSDictionary
