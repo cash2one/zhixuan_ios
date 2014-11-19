@@ -108,7 +108,7 @@ class VersionCheck:NSObject {
 }
 
 func goToAppStore(){
-    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/us/app/gu-piao-kai-hu-bao/id937138176?mt=8")!)
+    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/cn/app/gu-piao-kai-hu-bao/id937138176?mt=8")!)
 }
 
 func getDeviceId()->String{

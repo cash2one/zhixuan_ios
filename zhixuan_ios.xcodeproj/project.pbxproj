@@ -537,7 +537,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: zheng li (974PZ8L9B9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zheng li (974PZ8L9B9)";
 				INFOPLIST_FILE = zhixuan_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -547,7 +547,7 @@
 				);
 				PRODUCT_MODULE_NAME = "股票开户宝";
 				PRODUCT_NAME = "股票开户宝";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c5b2dfaf-44d3-428e-8145-33fb73125e36";
 				SWIFT_OBJC_BRIDGING_HEADER = "zhixuan_ios/zhixuan_ios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -570,7 +570,7 @@
 				);
 				PRODUCT_MODULE_NAME = "股票开户宝";
 				PRODUCT_NAME = "股票开户宝";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c5b2dfaf-44d3-428e-8145-33fb73125e36";
 				SWIFT_OBJC_BRIDGING_HEADER = "zhixuan_ios/zhixuan_ios-Bridging-Header.h";
 			};
 			name = Release;
